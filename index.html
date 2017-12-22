@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/reset.css" type="text/css">
 	<link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css">
 	<link rel="stylesheet" href="css/KitAnimate.css" type="text/css">
+	<link rel="stylesheet" href="css/jquery.fullPage.css" type="text/css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
 
 	<link rel="stylesheet" media="screen and (min-width: 240px) and (max-width: 768px)" href="css/layout-mobile.css">
@@ -19,62 +20,73 @@
 	<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 </head>
 <body>
-	<ul class="ps-lines">
-		<li class="v" style="margin-left:-501px"></li>
-		<li class="v" style="margin-left:500px"></li>
-		<li class="v" ></li>
-	</ul>
-	<div class="b b-1">
-		<div class="b-block">
-			<div class="b-logo-cont left">
-				<div class="b-logo-text left blue">ФРАНШИЗА "ELECTROFROG"<br/>ОТ КРУПНЕЙШЕГО ЗАВОДА ЗАО "ЛИТМАШДЕТАЛЬ"</div>
+
+	<!--<div id="mobile-menu" class="mobile-menu slideout-menu">
+		<ul>
+			<h2 class="b-title">Меню</h2>
+			<li></li>
+		</ul>
+	</div>-->
+
+	<div class="pagel-page">
+
+		<div class="b-block-menu">
+			<div class="b-block">
+				<a href="index.html" class="b-logo"></a>
+				<ul class="b-menu">
+					<li><a href="about.html">О компании</a></li>
+					<li><a href="services.html">Услуги</a></li>
+					<li><a href="cooperation.html">Сотрудничество</a></li>
+					<li><a href="special.html">Спецпредложения</a></li>
+					<li><a href="contacts.html">Контакты</a></li>
+				</ul>
+				<div class="b-menu-contacts right">
+					<div><a href="tel:+73822430063">+7 (3822) 43-00-63</a></div>
+					<a href="#" class="b-btn">Заказать звонок</a>
+				</div>
 			</div>
-			<div class="b-date-cont right">
-				<h2 class="blue">8 (800) 555 15 24</h2>
-				<p class="right"><a href="#b-popup-1" class="b-get-callback b-orange-butt fancy goal-click" data-goal="CALLBACK_B">Заказать звонок</a></p>
+		</div>
+
+		<div id="fullpage">
+			<div class="b b-screen b-screen-head">
+				<div class="b-block">
+					<div class="b-screen-content">
+						<h1 class="b-title">Оптовая поставка оборудования</h1>
+						<p>Для нефтегазодобывающего сектора, муниципальных учреждений и производственных объектов</p>
+					</div>
+				</div>
+			</div>
+			<div class="b b-screen b-screen-about">
+				<div class="b-block">
+					<div class="b-screen-content">
+
+					</div>
+				</div>
+			</div>
+			<div class="b b-screen b-screen-services">
+				<div class="b-block">
+					<div class="b-screen-content">
+
+					</div>
+				</div>
+			</div>
+			<div class="b b-screen b-screen-geography">
+				<div class="b-block">
+					<div class="b-screen-content">
+
+					</div>
+				</div>
+			</div>
+			<div class="b b-screen b-screen-contacts">
+				<div class="b-block">
+					<div class="b-screen-content">
+
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-	<div class="b b-2">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-3">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-4">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-5">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-6">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-7">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-8">
-		<div class="b-block">
-			
-		</div>
-	</div>
-	<div class="b b-9">
-		<div class="b-block">
-			
-		</div>
-	</div>
+	
 	<div style="display:none;">
 		<a href="#b-popup-error" class="b-error-link fancy" style="display:none;"></a>
 		<div class="b-popup" id="b-popup-1">
@@ -108,7 +120,7 @@
 	</div>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
-	<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false&key=AIzaSyD6Sy5r7sWQAelSn-4mu2JtVptFkEQ03YI"></script>
+	<!--<script type="text/javascript" src="//maps.google.com/maps/api/js?sensor=false&key=AIzaSyD6Sy5r7sWQAelSn-4mu2JtVptFkEQ03YI"></script>-->
 	<script type="text/javascript" src="js/jssor.js"></script>
 	<script type="text/javascript" src="js/jssor.slider.js"></script>
 	<script type="text/javascript" src="js/TweenMax.min.js"></script>
@@ -121,6 +133,7 @@
 	<script type="text/javascript" src="js/KitAnimate.js"></script>
 	<script type="text/javascript" src="js/device.js"></script>
 	<script type="text/javascript" src="js/KitSend.js"></script>
+	<script type="text/javascript" src="js/jquery.fullPage.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
