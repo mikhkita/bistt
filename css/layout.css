@@ -142,7 +142,9 @@ input:-moz-placeholder {
 	color: #777;
 }
 [class^="icon-"]:before, 
-[class*=" icon-"]:before  {
+[class*="icon-"]:before,
+[class^="icon-"]:after, 
+[class*="icon-"]:after{
 	font-family: 'icomoon' !important;
 	speak: none;
 	font-style: normal;
@@ -155,7 +157,9 @@ input:-moz-placeholder {
 	-moz-osx-font-smoothing: grayscale;
 }
 .b-btn{
-	padding: 11px 18px;
+	display: inline-block;
+	text-align: center;
+	padding: 20px 24px;
 	border-radius: 3px;
 	border: 1px solid #fece0b;
 	font-family: 'Geometria-Medium';
@@ -197,21 +201,49 @@ h2.b-title{
 	font-size: 48px;
 	line-height: 60px;
 	color: #FFF;
-	margin-bottom: 36px;
 }
 
 h3.b-title{
-	
+	font-family: 'Merel-Medium';
+	font-size: 28px;
+	line-height: 38px;
+}
+
+.icon-arrow-right:after{
+	margin-left: 16px;
+    content: '\e900';
+    font-size: 12px;
+    color: #FFF;
+    vertical-align: middle;
+}
+
+.icon-phone:before{
+    content: '\e905';
+    font-size: 26px;
+    color: #fece0b;
+    vertical-align: middle;
+}
+
+.icon-msg:before{
+    content: '\e903';
+    font-size: 20px;
+    color: #fece0b;
+    vertical-align: middle;
+}
+.icon-map:before{
+    content: '\e902';
+    font-size: 28px;
+    color: #fece0b;
+    vertical-align: middle;
 }
 
 /*-----------Главная------------*/
 
 .b-screen{
-	background-position: 50% 50%;
+	background-position: 50% 15%;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-color: #ccc;
-	height: 555px;
+	overflow: hidden;
 }
 
 .b-screen-head{
@@ -277,23 +309,214 @@ h3.b-title{
 		}
 
 		.b-menu-contacts .b-btn{
+			padding: 11px 18px;
 			margin-top: 14px;
 		}
+
+.b-screen .b-btn{
+	margin-top: 44px;
+}
 
 .b-screen-head .b-screen-content{
 	width: 450px;
 }
 
+	.b-screen-head .b-screen-content p{
+		width: 440px;
+		font-size: 26px;
+		line-height: 32px;
+		margin-top: 40px;
+	}
+
+	.b-screen-about .b-screen-content p{
+		width: 554px;
+		font-size: 20px;
+		line-height: 32px;
+		margin-top: 36px;
+	}
+
+.b-tube{
+	position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 1152px;
+    margin: 0 auto;
+}
+
+	.b-tube img{
+		display: inline-block;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
+
+.services-list{
+	width: calc(100% - 45px);
+	margin-top: 50px;
+}
+	.services-item{
+		float: left;
+		width: calc(100%/4 - 18px);
+		margin-right: 24px;
+	}
+
+	.services-item:last-child{
+		margin-right: 0;
+	}
+
+		.services-item p{
+			font-size: 22px;
+			line-height: 28px;
+			margin-top: 34px;
+		}
+
+.b-screen-geography h2{
+	text-align: center;
+}
+
+.b-geography-map{
+	width: 84%;
+	height: 492px;
+	margin-left: 6%;
+	background-image: url(../i/map.svg);
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.dot-yellow{
+	position: absolute;
+	width: 13px;
+	height: 13px;
+	border-radius: 100px;
+	background-color: #fece0b;
+}
+
+.dot-white{
+	position: absolute;
+	width: 8px;
+	height: 8px;
+	border-radius: 100px;
+	background-color: #FFF;
+}
+
+.dot-white-small{
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	border-radius: 100px;
+	background-color: #FFF;
+}
+
+.b-contacts{
+	float: left;
+	width: 390px;
+	font-size: 20px;
+	line-height: 32px;
+	padding-right: 30px;
+}
+	.b-contacts-info{
+		margin-top: 32px;
+	}
+		.b-contacts-item{
+			margin-bottom: 16px;
+		}
+			.b-contacts-item p{
+				display: inline-block;
+			}
+			.b-contacts-item-right{
+				float: right;
+				width: calc(100% - 50px);
+			}
+
+	.b-screen .b-btn-city{
+		padding: 8px 18px;
+		margin-right: 24px;
+		border: 1px solid #FFF;
+		margin-top: 20px;
+	}
+
+	.b-btn-city.active{
+		border: 1px solid #fece0b;
+	}
+
+	.b-map-block{
+		float: left;
+	}
+
+		.b-map{
+			height: 355px;
+		}
+
 /*----------FullPage.js-----------*/
 
+.fp-tableCell{
+	padding-top: 70px;
+}
+
 #fp-nav{
+	z-index: 0;
 	width: 100%;
 }
 
-#fp-nav ul{
-	margin-right: -10px;
-	float: right;
-}
+	#fp-nav ul{
+		/*margin-right: -10px;*/
+		float: right;
+	}
+
+		#fp-nav ul li{
+			width: 15px;
+			height: 15px;
+			margin: 0;
+			margin-bottom: 24px;
+		}
+
+			#fp-nav ul li a span{
+				display: block;
+				margin: 0;
+				width: 15px;
+				height: 15px;
+				border-radius: 3px;
+				border: 1px solid #FFF;
+				background-color: transparent;
+				position: static;
+				top: auto;
+				left: auto;
+			}
+
+			#fp-nav ul li a.active span{
+				width: 15px;
+				height: 15px;
+				margin: 0;
+				-webkit-transform: rotate(45deg);
+	   			-moz-transform: rotate(45deg);
+	    		-ms-transform: rotate(45deg);
+	    		-o-transform: rotate(45deg);
+	    		transform: rotate(45deg);
+				border-radius: 3px;
+				border: 1px solid #FFF;
+				background-color: #FFF;
+			}
+
+			#fp-nav ul li:hover a span{
+			    width: 15px;
+			    height: 15px;
+			    margin: 0;
+			    -webkit-transform: rotate(45deg);
+	   			-moz-transform: rotate(45deg);
+	    		-ms-transform: rotate(45deg);
+	    		-o-transform: rotate(45deg);
+	    		transform: rotate(45deg);
+	    		border: 1px solid #fece0b;
+			}
+
+			#fp-nav ul li:hover a.active span{
+			    width: 15px;
+			    height: 15px;
+			    margin: 0;
+			    border-radius: 3px;
+			}
 
 /*-------------------------------*/
 

@@ -45,9 +45,19 @@ $(document).ready(function(){
         sectionSelector: '.b-screen',
         navigation: true,
         navigationPosition: '',
+        /*onLeave: function(index, nextIndex, direction){console.log("++");},
+        afterLoad: function(anchorLink, index){console.log("++");},
+        afterRender: function(){console.log("++");},
+        afterResize: function(){console.log("++");},
+        afterResponsive: function(isResponsive){console.log("++");},
+        afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){console.log("++");},
+        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){console.log("++");}*/
     });
 
     $('#fp-nav ul').wrap("<div class='b-block'></div>");
+
+    $('.b-screen-about').prepend( $('.fp-tableCell .b-tube'));
+
     
 	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);
  //    var myOptions = {
