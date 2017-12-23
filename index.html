@@ -211,22 +211,28 @@
 			<h2 class="b-title">Обратный звонок</h2>
 			<h4>Вы можете оставить заявку на обратный звонок,<br>и наш менеджер свяжется с Вами в ближайшее время</h4>
 			<form id="b-popup-call-form" class="b-popup-call-form clearfix" method="post" action="kitsend.php">
-				<input type="text" name="name" placeholder="Иван Иванович" required>
-				<input type="text" name="phone" placeholder="+7 (999) 999-99-99" required>
-				<a href="#" class="b-btn ajax" onclick="$('#b-popup-call-form').submit(); return false;">Отправить</a>
+				<div class="wrap-input">
+					<h4>Ваше имя</h4>
+					<input type="text" name="name" placeholder="Иван Иванович" required>
+				</div>
+				<div class="wrap-input">
+					<h4>Ваше телефон</h4>
+					<input type="text" name="phone" placeholder="+7 (999) 999-99-99" required>
+				</div>
+				<a href="#" class="b-btn ajax icon-arrow-right" onclick="$('#b-popup-call-form').submit(); return false;">Отправить</a>
 			</form>
 			<p class="personal-info">Отправляя запрос, Вы подтверждаете <a href="#">согласие на&nbsp;обработку персональных данных</a></p>
 		</div>
 
 		<div class="b-thanks b-popup" id="b-popup-success">
-			<h3>Спасибо!</h3>
-			<h4>Ваша заявка успешно отправлена.<br/>Наш менеджер свяжется с Вами в течение часа.</h4>
-			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
+			<h2>Спасибо за заявку!</h2>
+			<h4>Мы уже получили Ваше обращение,<br>наш менеджер свяжется с Вами в ближайшее время.</h4>
+			<a href="#" class="b-btn icon-arrow-right" onclick="$.fancybox.close(); return false;">Закрыть</a>
 		</div>
 		<div class="b-thanks b-popup" id="b-popup-error">
-			<h3>Ошибка отправки!</h3>
+			<h2>Ошибка отправки!</h2>
 			<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
-			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
+			<a href="#" class="b-btn icon-arrow-right" onclick="$.fancybox.close(); return false;">Закрыть</a>
 		</div>
 
 	</div>

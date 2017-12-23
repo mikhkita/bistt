@@ -159,12 +159,13 @@ input:-moz-placeholder {
 }
 .b-btn{
 	display: inline-block;
-	text-align: center;
+	text-align: left;
 	padding: 20px 24px;
 	border-radius: 3px;
 	border: 1px solid #fece0b;
 	font-family: 'Geometria-Medium';
 	font-size: 16px;
+	line-height: 20px;
 }
 
 .b-orange-btn{
@@ -211,11 +212,12 @@ h3.b-title{
 }
 
 .icon-arrow-right:after{
+	float: right;
 	margin-left: 16px;
     content: '\e900';
     font-size: 12px;
     color: #FFF;
-    vertical-align: middle;
+    line-height: 22px;
 }
 
 .icon-phone:before{
@@ -291,7 +293,7 @@ input{
 
 	.b-logo{
 		display: inline-block;
-		width: 250px;
+		width: 256px;
 		height: 57px;
     	background-position: 50% 50%;
     	background-repeat: no-repeat;
@@ -479,7 +481,7 @@ input{
 /*-----------Popup-----------*/
 
 .b-popup{
-	width: 100%;
+	width: calc(100% - 48px);
 	max-width: 500px;
 	padding: 40px 44px 28px;
 	background-position: 50% 50%;
@@ -503,21 +505,33 @@ input{
 		margin: 16px 0;
 	}
 
-		.b-popup form input{
+		.b-popup form .wrap-input{
 			float: left;
 			width: calc(100%/2 - 12px);
 			margin-right: 24px;
 		}
 
-		.b-popup form input:last-child{
+		.b-popup form .wrap-input:nth-child(2n){
 			margin-right: 0;
 		}
 
+			.b-popup form .wrap-input h4{
+				margin-bottom: 4px;
+			}
+
+			.b-popup form .wrap-input input{
+				width: 100%;
+			}
+
 	.b-popup .b-btn{
 		float: right;
+		width: calc(50% - 12px);
+		padding: 15px 24px;
+		margin-top: 32px;
 	}
 
 	.personal-info{
+		font-size: 14px;
 		color: rgba(255, 255, 255, 0.4);
 	}
 
@@ -606,7 +620,7 @@ input{
 }
 
 .fancybox-close-small:after {
-    content: "\e900";
+    content: "\e901";
     position: absolute;
     left: 8px;
     top: 10px;
@@ -615,6 +629,12 @@ input{
     width: auto;
     height: auto;
     background-color: transparent;
+}
+
+.fancybox-close-small:hover:after {
+	opacity: 0.7;
+    color: #FFF;
+    background: transparent;
 }
 
 /*-------------------------------*/

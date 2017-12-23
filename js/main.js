@@ -87,7 +87,7 @@ $(document).ready(function(){
 
     $('.b-screen-about').prepend( $('.fp-tableCell .b-tube'));
 
-    
+    console.log("init");
 	// var myPlace = new google.maps.LatLng(55.754407, 37.625151);
  //    var myOptions = {
  //        zoom: 16,
