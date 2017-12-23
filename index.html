@@ -42,13 +42,14 @@
 				</ul>
 				<div class="b-menu-contacts right">
 					<div><a href="tel:+73822430063">+7 (3822) 43-00-63</a></div>
-					<a href="#" class="b-btn">Заказать звонок</a>
+					<a href="#b-popup-call" class="fancy b-btn">Заказать звонок</a>
 				</div>
 			</div>
 		</div>
 
 		<div id="fullpage">
 			<div class="b b-screen b-screen-head">
+				<div class="b-screen-back"></div>
 				<div class="b-block">
 					<div class="b-screen-content">
 						<h1 class="b-title">Оптовая поставка оборудования</h1>
@@ -127,7 +128,6 @@
 							<div class="dot-white" style="top:34%; left:74.4%;"></div>
 							<div class="dot-white" style="top:41%; left:83.4%;"></div>
 							<div class="dot-white" style="top:23%; left:87.4%;"></div>
-
 							
 							<div class="dot-white-small" style="top:50%; left:27.7%;"></div>
 							<div class="dot-white-small" style="top:49%; left:34.7%;"></div>
@@ -206,6 +206,18 @@
 				</div>
 			</form>
 		</div>
+
+		<div class="b-popup" id="b-popup-call">
+			<h2 class="b-title">Обратный звонок</h2>
+			<h4>Вы можете оставить заявку на обратный звонок,<br>и наш менеджер свяжется с Вами в ближайшее время</h4>
+			<form id="b-popup-call-form" class="b-popup-call-form clearfix" method="post" action="kitsend.php">
+				<input type="text" name="name" placeholder="Иван Иванович" required>
+				<input type="text" name="phone" placeholder="+7 (999) 999-99-99" required>
+				<a href="#" class="b-btn ajax" onclick="$('#b-popup-call-form').submit(); return false;">Отправить</a>
+			</form>
+			<p class="personal-info">Отправляя запрос, Вы подтверждаете <a href="#">согласие на&nbsp;обработку персональных данных</a></p>
+		</div>
+
 		<div class="b-thanks b-popup" id="b-popup-success">
 			<h3>Спасибо!</h3>
 			<h4>Ваша заявка успешно отправлена.<br/>Наш менеджер свяжется с Вами в течение часа.</h4>
@@ -216,6 +228,7 @@
 			<h4>Приносим свои извинения. Пожалуйста, попробуйте отправить Вашу заявку позже.</h4>
 			<input type="submit" class="b-orange-butt" onclick="$.fancybox.close(); return false;" value="Закрыть">
 		</div>
+
 	</div>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fancybox.js"></script>

@@ -136,15 +136,16 @@ input.error,textarea.error{
 	margin-left: -500px;
 }
 input::-webkit-input-placeholder {
-	color: #777;
+	color: rgba(255, 255, 255, 0.4);
 }
 input:-moz-placeholder {
-	color: #777;
+	color: rgba(255, 255, 255, 0.4);
 }
 [class^="icon-"]:before, 
 [class*="icon-"]:before,
 [class^="icon-"]:after, 
-[class*="icon-"]:after{
+[class*="icon-"]:after,
+.fancybox-close-small:after{
 	font-family: 'icomoon' !important;
 	speak: none;
 	font-style: normal;
@@ -237,16 +238,30 @@ h3.b-title{
     vertical-align: middle;
 }
 
+input{
+	padding: 15px 24px;
+	border: 1px solid #ffffff;
+	border-radius: 3px;
+	background-color: transparent;
+	color: #FFF;
+	font-family: 'Merel-Regular';
+	font-size: 16px;
+}
+
 /*-----------Главная------------*/
 
-.b-screen{
+.b-screen .b-screen-back{
+	position: absolute;
+	width: 100%;
+	height: 100%;
 	background-position: 50% 15%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	overflow: hidden;
+	margin-bottom: 32px;
 }
 
-.b-screen-head{
+.b-screen-head .b-screen-back{
 	background-image: url(../i/back-1.jpg);
 }
 
@@ -345,6 +360,7 @@ h3.b-title{
 }
 
 	.b-tube img{
+		width: 546px;
 		display: inline-block;
 		position: absolute;
 		bottom: 0;
@@ -460,6 +476,60 @@ h3.b-title{
 			height: 355px;
 		}
 
+/*-----------Popup-----------*/
+
+.b-popup{
+	width: 100%;
+	max-width: 500px;
+	padding: 40px 44px 28px;
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url(../i/popup-back.jpg);
+}
+
+	.b-popup h2{
+		font-size: 36px;
+		line-height: 44px;
+		margin-bottom: 16px;
+	}
+
+	.b-popup h4{
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	.b-popup form{
+		margin: 16px 0;
+	}
+
+		.b-popup form input{
+			float: left;
+			width: calc(100%/2 - 12px);
+			margin-right: 24px;
+		}
+
+		.b-popup form input:last-child{
+			margin-right: 0;
+		}
+
+	.b-popup .b-btn{
+		float: right;
+	}
+
+	.personal-info{
+		color: rgba(255, 255, 255, 0.4);
+	}
+
+		.personal-info a{
+			color: rgba(255, 255, 255, 0.4);
+			border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+		}
+
+		.personal-info a:hover{
+			border-bottom: transparent;
+		}
+
 /*----------FullPage.js-----------*/
 
 .fp-tableCell{
@@ -528,6 +598,24 @@ h3.b-title{
 			    margin: 0;
 			    border-radius: 3px;
 			}
+
+.fancybox-close-small {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.fancybox-close-small:after {
+    content: "\e900";
+    position: absolute;
+    left: 8px;
+    top: 10px;
+    color: #FFF;
+    font-size: 25px;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+}
 
 /*-------------------------------*/
 

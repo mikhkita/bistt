@@ -1,4 +1,7 @@
-$(document).ready(function(){	
+$(document).ready(function(){
+
+    var isRetina = retina();
+
     function resize(){
        if( typeof( window.innerWidth ) == 'number' ) {
             myWidth = window.innerWidth;
@@ -12,6 +15,19 @@ $(document).ready(function(){
             myHeight = document.body.clientHeight;
         }
     }
+
+    function retina(){
+        var mediaQuery = "(-webkit-min-device-pixel-ratio: 1.5),\
+            (min--moz-device-pixel-ratio: 1.5),\
+            (-o-min-device-pixel-ratio: 3/2),\
+            (min-resolution: 1.5dppx)";
+        if (window.devicePixelRatio > 1)
+            return true;
+        if (window.matchMedia && window.matchMedia(mediaQuery).matches)
+            return true;
+        return false;
+    }
+
     $(window).resize(resize);
     resize();
 
@@ -40,6 +56,19 @@ $(document).ready(function(){
         }
     }
     $.fn.placeholder();
+
+    if(isRetina){
+        $("*[data-retina]").each(function(){
+            var $this = $(this),
+                img = new Image(),
+                src = $this.attr("data-retina");
+
+            img.onload = function(){
+                $this.attr("src", $this.attr("data-retina"));
+            };
+            img.src = src;
+        });
+    }
 
     $('#fullpage').fullpage({
         sectionSelector: '.b-screen',
