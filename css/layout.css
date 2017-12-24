@@ -442,6 +442,33 @@ input{
 	margin-top: -2px;
 }
 
+.b-geography-legend{
+	text-align: center;
+}
+
+	.legend-item{
+		display: inline-block;
+		margin-right: 61px;
+	}
+
+	.legend-item:last-child{
+		margin-right: 0;
+	}
+
+		.legend-item-dot{
+			display: inline-block;
+			width: 13px;
+			height: 13px;
+			margin-right: 15px;
+			border-radius: 100px;
+			background-color: #FFF;
+			vertical-align: bottom;
+		}
+		
+		.legend-item-dot.yellow{
+			background-color: #fece0b;
+		}
+
 .b-contacts{
 	float: left;
 	width: 390px;
