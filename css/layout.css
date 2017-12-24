@@ -101,6 +101,10 @@ input.error,textarea.error{
 	box-shadow: 0 0px 0px 1px #F00;
 }
 
+.hide{
+	display: none !important;
+}
+
 .fancybox-inner{
 	overflow: visible !important;
 }
@@ -472,10 +476,13 @@ input{
 
 	.b-map-block{
 		float: left;
+		width: calc(100% - 490px);
 	}
 
 		.b-map{
+			width: 100%;
 			height: 355px;
+			margin-top: 24px;
 		}
 
 /*-----------Popup-----------*/
@@ -484,6 +491,10 @@ input{
 	width: calc(100% - 48px);
 	max-width: 500px;
 	padding: 40px 44px 28px;
+	border-radius: 3px;
+	-webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+	-moz-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -541,7 +552,7 @@ input{
 		}
 
 		.personal-info a:hover{
-			border-bottom: transparent;
+			border-bottom: 0;
 		}
 
 /*----------FullPage.js-----------*/
@@ -550,9 +561,9 @@ input{
 	padding-top: 50px;
 }
 
-#fp-nav{
-	z-index: 0;
-	width: 100%;
+#fp-nav.right{
+	right: auto;
+    left: calc(50% + 553px);
 }
 
 	#fp-nav ul{
@@ -561,15 +572,16 @@ input{
 	}
 
 		#fp-nav ul li{
-			width: 15px;
-			height: 15px;
+			width: 31px;
+			height: 31px;
 			margin: 0;
-			margin-bottom: 24px;
+			margin-bottom: 8px;
 		}
 
 			#fp-nav ul li a span{
-				display: block;
-				margin: 0;
+				vertical-align: middle;
+			    display: inline-block;
+				margin: 3px 0 0 8px;
 				width: 15px;
 				height: 15px;
 				border-radius: 3px;
@@ -583,7 +595,7 @@ input{
 			#fp-nav ul li a.active span{
 				width: 15px;
 				height: 15px;
-				margin: 0;
+				margin: 3px 0 0 8px;
 				-webkit-transform: rotate(45deg);
 	   			-moz-transform: rotate(45deg);
 	    		-ms-transform: rotate(45deg);
@@ -597,7 +609,7 @@ input{
 			#fp-nav ul li:hover a span{
 			    width: 15px;
 			    height: 15px;
-			    margin: 0;
+				margin: 3px 0 0 8px;
 			    -webkit-transform: rotate(45deg);
 	   			-moz-transform: rotate(45deg);
 	    		-ms-transform: rotate(45deg);
@@ -609,8 +621,9 @@ input{
 			#fp-nav ul li:hover a.active span{
 			    width: 15px;
 			    height: 15px;
-			    margin: 0;
+				margin: 3px 0 0 8px;
 			    border-radius: 3px;
+	    		border: 1px solid transparent;
 			}
 
 .fancybox-close-small {
