@@ -85,6 +85,10 @@ $(document).ready(function(){
 
     $('.b-screen-about').prepend( $('.fp-tableCell .b-tube'));
 
+    $('#fp-nav ul li').each(function(){
+        $(this).append($('.screen-bubbles .screen-bubbles-item:first-child'));
+    });
+
     if($('.main-page').length){
         $('.b-logo').on('click', function(){
             $.fn.fullpage.moveTo(1);

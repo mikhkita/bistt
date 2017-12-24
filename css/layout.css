@@ -555,6 +555,38 @@ input{
 			border-bottom: 0;
 		}
 
+/*----------Bubbles----------*/
+
+.screen-bubbles-item{
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: -7px;
+    right: 34px;
+	padding: 10px 30px 15px;
+	border-radius: 3px;
+	background-color: #FFF;
+	color: #554e4e;
+	font-size: 18px;
+	-webkit-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    -moz-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    -ms-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    -o-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+}
+
+.screen-bubbles-item:after {
+    position: absolute;
+    content: "s";
+    font-size: 0px;
+    width: 0px;
+    height: 0px;
+    right: -20px;
+    top: 9px;
+    border: 12px solid transparent;
+    border-left: 12px solid #FFF;
+}
+
 /*----------FullPage.js-----------*/
 
 .fp-tableCell{
@@ -572,6 +604,7 @@ input{
 	}
 
 		#fp-nav ul li{
+			position: relative;
 			width: 31px;
 			height: 31px;
 			margin: 0;
@@ -616,6 +649,16 @@ input{
 	    		-o-transform: rotate(45deg);
 	    		transform: rotate(45deg);
 	    		border: 1px solid #fece0b;
+			}
+
+			#fp-nav ul li:hover .screen-bubbles-item{
+				opacity: 1;
+				visibility: visible;
+				-webkit-transform: translateX(-10px);
+			    -moz-transform: translateX(-10px);
+			    -ms-transform: translateX(-10px);
+			    -o-transform: translateX(-10px);
+			    transform: translateX(-10px);
 			}
 
 			#fp-nav ul li:hover a.active span{
