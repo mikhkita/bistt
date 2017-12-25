@@ -97,6 +97,10 @@ input.error,textarea.error{
 	display: none !important;
 }
 
+.init-hide{
+	display: none;
+}
+
 .fancybox-inner{
 	overflow: visible !important;
 }
@@ -207,6 +211,21 @@ h3.b-title{
 	line-height: 38px;
 }
 
+.icon-mouse:before{
+    content: '\e904';
+    display: block;
+    margin-bottom: 4px;
+    font-size: 37px;
+    color: #FFF;
+}
+
+.icon-mouse-arrow:before{
+    content: '\e907';
+    display: block;
+    font-size: 8px;
+    color: #FFF;
+}
+
 .icon-arrow-right:after{
 	float: right;
 	margin-left: 16px;
@@ -222,7 +241,6 @@ h3.b-title{
     color: #fece0b;
     vertical-align: middle;
 }
-
 .icon-msg:before{
     content: '\e903';
     font-size: 20px;
@@ -248,7 +266,7 @@ input{
 
 /*-----------Главная------------*/
 
-.b-screen .b-screen-back{
+.b-screen .fp-bg{
 	position: absolute;
 	top: 0px;
 	width: 100%;
@@ -260,24 +278,170 @@ input{
 	margin-bottom: 32px;
 }
 
-.b-screen-head .b-screen-back{
-	background-image: url(../i/back-1.jpg);
+.b-screen-head .fp-bg{
+	background-image: url(../i/back-1-shakal.jpg);
 }
 
-.b-screen-about{
-	background-image: url(../i/back-2.jpg);
+.b-screen-about .fp-bg{
+	background-image: url(../i/back-2-shakal.jpg);
 }
 
-.b-screen-services{
-	background-image: url(../i/back-3.jpg);
+.b-screen-services .fp-bg{
+	background-image: url(../i/back-3-shakal.jpg);
 }
 
-.b-screen-geography{
-	background-image: url(../i/back-2.jpg);
+.b-screen-geography .fp-bg{
+	background-image: url(../i/back-2-shakal.jpg);
 }
 
-.b-screen-contacts{
-	background-image: url(../i/back-5.jpg);
+.b-screen-contacts .fp-bg{
+	background-image: url(../i/back-5-shakal.jpg);
+}
+
+.b-mouse{
+	text-align: center;
+	width: 22px;
+	position: absolute;
+	left: calc(50% - 11px);
+	bottom: 35px;
+}
+
+	.b-mouse div{
+
+	}
+
+@-webkit-keyframes mouse-first-move {
+	0% {
+		-webkit-transform: translateY(0);
+	}
+	50%{
+		-webkit-transform: translateY(6px);
+	}
+	100%{
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes mouse-first-move {
+	0% {
+		-moz-transform: translateY(0);
+	}
+	50%{
+		-moz-transform: translateY(6px);
+	}
+	100%{
+		-moz-transform: translateY(0);
+	}
+}
+
+@-ms-keyframes mouse-first-move {
+	0% {
+		-ms-transform: translateY(0);
+	}
+	50%{
+		-ms-transform: translateY(6px);
+	}
+	100%{
+		-ms-transform: translateY(0);
+	}
+}
+
+@-o-keyframes mouse-first-move {
+	0% {
+		-o-transform: translateY(0);
+	}
+	50%{
+		-o-transform: translateY(6px);
+	}
+	100%{
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes mouse-first-move {
+	0% {
+		transform: translateY(0);
+	}
+	50%{
+		transform: translateY(6px);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
+
+@-webkit-keyframes mouse-second-move {
+	0% {
+		-webkit-transform: translateY(0);
+	}
+	50%{
+		-webkit-transform: translateY(12px);
+	}
+	100%{
+		-webkit-transform: translateY(0);
+	}
+}
+
+@-moz-keyframes mouse-second-move {
+	0% {
+		-moz-transform: translateY(0);
+	}
+	50%{
+		-moz-transform: translateY(12px);
+	}
+	100%{
+		-moz-transform: translateY(0);
+	}
+}
+
+@-ms-keyframes mouse-second-move {
+	0% {
+		-ms-transform: translateY(0);
+	}
+	50%{
+		-ms-transform: translateY(12px);
+	}
+	100%{
+		-ms-transform: translateY(0);
+	}
+}
+
+@-o-keyframes mouse-second-move {
+	0% {
+		-o-transform: translateY(0);
+	}
+	50%{
+		-o-transform: translateY(12px);
+	}
+	100%{
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes mouse-second-move {
+	0% {
+		transform: translateY(0);
+	}
+	50%{
+		transform: translateY(12px);
+	}
+	100%{
+		transform: translateY(0);
+	}
+}
+
+.icon-mouse-arrow:first-child{
+	animation: mouse-first-move 3s ease-in-out infinite;
+	-moz-animation: mouse-first-move 3s ease-in-out infinite;
+	-webkit-animation: mouse-first-move 3s ease-in-out infinite;
+ 	-o-animation: mouse-first-move 3s ease-in-out infinite;
+}
+
+.icon-mouse-arrow:last-child{
+	animation: mouse-second-move 3s ease-in-out infinite;
+	-moz-animation: mouse-second-move 3s ease-in-out infinite;
+	-webkit-animation: mouse-second-move 3s ease-in-out infinite;
+ 	-o-animation: mouse-second-move 3s ease-in-out infinite;
 }
 
 .b-block-menu{
@@ -364,6 +528,7 @@ input{
 		position: absolute;
 		bottom: 0;
 		right: 0;
+		z-index: 5;
 	}
 
 .services-list{
@@ -406,6 +571,7 @@ input{
 }
 
 .dot-yellow{
+	opacity: 0;
 	position: absolute;
 	width: 13px;
 	height: 13px;
@@ -416,6 +582,7 @@ input{
 }
 
 .dot-white{
+	opacity: 0;
 	position: absolute;
 	width: 8px;
 	height: 8px;
@@ -426,6 +593,7 @@ input{
 }
 
 .dot-white-small{
+	opacity: 0;
 	position: absolute;
 	width: 5px;
 	height: 5px;
@@ -435,8 +603,25 @@ input{
 	margin-top: -2px;
 }
 
+.dot-yellow.dot-show,
+.dot-white.dot-show,
+.dot-white-small.dot-show{
+	-webkit-transition: opacity 250ms ease-out;
+    -moz-transition: opacity 250ms ease-out;
+    -ms-transition: opacity 250ms ease-out;
+    -o-transition: opacity 250ms ease-out;
+    transition: opacity 250ms ease-out;
+}
+
+.dot-yellow.dot-show,
+.dot-white.dot-show,
+.dot-white-small.dot-show{
+	opacity: 1;
+}
+
 .b-geography-legend{
 	text-align: center;
+	margin-top: 12px;
 }
 
 	.legend-item{
@@ -518,7 +703,6 @@ input{
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-image: url(../i/popup-back.jpg);
 }
 
 	.b-popup h2{
@@ -574,6 +758,10 @@ input{
 		.personal-info a:hover{
 			border-bottom: 0;
 		}
+
+.fancybox-close-small:active:after, .fancybox-close-small:focus:after {
+	outline: none;
+}
 
 /*----------Bubbles----------*/
 

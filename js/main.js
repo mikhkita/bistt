@@ -70,10 +70,36 @@ $(document).ready(function(){
         });
     }
 
+    function showDots(){
+        var delay = 1;
+        $(".dot-white, .dot-white-small, .dot-yellow").each(function(){
+            var el = this;
+            setTimeout(function(){
+                $(el).addClass('dot-show');
+            }, 75 * delay);
+            delay++;
+        });
+        $('.b-geography-map').addClass("dots-loaded")
+    }
+
     $('#fullpage').fullpage({
         sectionSelector: '.b-screen',
         navigation: true,
         navigationPosition: 'right',
+        afterLoad: function(anchorLink, index){
+            if(index === 4 && !$('.b-geography-map').hasClass("dots-loaded")){
+                showDots();
+            }
+        },
+
+
+        parallax: true,
+                parallaxKey: 'YWx2YXJvdHJpZ28uY29tXzlNZGNHRnlZV3hzWVhnPTFyRQ==',
+                parallaxOptions: {
+                    type: 'reveal',
+                    percentage: 62,
+                    property: 'translate'
+                },
         /*onLeave: function(index, nextIndex, direction){console.log("++");},
         afterLoad: function(anchorLink, index){console.log("++");},
         afterRender: function(){console.log("++");},
@@ -89,12 +115,44 @@ $(document).ready(function(){
         $(this).append($('.screen-bubbles .screen-bubbles-item:first-child'));
     });
 
+    $('.b-mouse').on('click', function(){
+        $.fn.fullpage.moveSectionDown();
+        return false;
+    });
+
     if($('.main-page').length){
         $('.b-logo').on('click', function(){
             $.fn.fullpage.moveTo(1);
             return false;
         });
+
+        $("*[data-back-full]").each(function(){
+            var $this = $(this),
+                img = new Image(),
+                src = $this.attr("data-back-full");
+            img.onload = function(){
+                $this.css("background-image", 'url(' + $this.attr("data-back-full") + ')');
+            };
+            img.src = src;
+        });
+        
     }
+
+    $(".b-popup[data-back]").each(function(){
+        var $this = $(this),
+            img = new Image(),
+            src = $this.attr("data-back");
+        img.onload = function(){
+            $this.css("background-image", 'url(' + $this.attr("data-back") + ')');
+        };
+        img.src = src;
+    });
+
+    $(window).on('load', function(){
+        $('.init-hide').each(function(){
+            $(this).removeClass("init-hide");
+        });
+    });
 
     var styles = [
         {

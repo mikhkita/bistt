@@ -1,17 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="14px" height="8px" viewBox="0 0 14 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-    <title>Group</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Главная" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-793.000000, -707.000000)">
-        <g id="Первый-экран" fill="#FFFFFF">
-            <g id="Mouse-icon" transform="translate(789.000000, 658.000000)">
-                <g id="Group" transform="translate(4.000000, 49.000000)">
-                    <rect id="Rectangle-6" transform="translate(3.889087, 3.889087) rotate(45.000000) translate(-3.889087, -3.889087) " x="-1.1109127" y="3.3890873" width="10" height="1" rx="0.5"></rect>
-                    <rect id="Rectangle-6" transform="translate(10.289112, 3.889087) scale(1, -1) rotate(45.000000) translate(-10.289112, -3.889087) " x="5.28911171" y="3.3890873" width="10" height="1" rx="0.5"></rect>
-                </g>
-            </g>
-        </g>
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="16" viewBox="0 0 14 16"><defs><path id="a9uda" d="M793.35 707.35c.2-.2.52-.2.71 0l6.37 6.37c.2.2.2.51 0 .7a.5.5 0 0 1-.71 0l-6.37-6.36a.5.5 0 0 1 0-.7z"/><path id="a9udb" d="M799.75 714.43c.2.2.52.2.71 0l6.37-6.37a.5.5 0 0 0-.7-.7l-6.38 6.36a.5.5 0 0 0 0 .7z"/><path id="a9udc" d="M793.35 699.35c.2-.2.52-.2.71 0l6.37 6.37c.2.2.2.51 0 .7a.5.5 0 0 1-.71 0l-6.37-6.36a.5.5 0 0 1 0-.7z"/><path id="a9udd" d="M799.75 706.43c.2.2.52.2.71 0l6.37-6.37a.5.5 0 0 0-.7-.7l-6.38 6.36a.5.5 0 0 0 0 .7z"/></defs><g><g transform="translate(-793 -699)"><use fill="#fff" xlink:href="#a9uda"/></g><g transform="translate(-793 -699)"><use fill="#fff" xlink:href="#a9udb"/></g><g transform="translate(-793 -699)"><use fill="#fff" xlink:href="#a9udc"/></g><g transform="translate(-793 -699)"><use fill="#fff" xlink:href="#a9udd"/></g></g></svg>
