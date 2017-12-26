@@ -71,13 +71,21 @@ $(document).ready(function(){
     }
 
     function showDots(){
-        var delay = 1;
+        var delayCoef = 1,
+            delayYellow = 50,
+            delay = 0;
         $(".dot-white, .dot-white-small, .dot-yellow").each(function(){
             var el = this;
+            if(!$(el).hasClass("dot-yellow")){
+                delay = 25 * delayCoef;
+            }else{
+                delay = 25 * delayCoef + delayYellow;
+                delayYellow += 75;
+            }
             setTimeout(function(){
                 $(el).addClass('dot-show');
-            }, 75 * delay);
-            delay++;
+            }, delay);
+            delayCoef++;
         });
         $('.b-geography-map').addClass("dots-loaded")
     }

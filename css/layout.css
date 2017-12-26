@@ -431,17 +431,17 @@ input{
 }
 
 .icon-mouse-arrow:first-child{
-	animation: mouse-first-move 3s ease-in-out infinite;
-	-moz-animation: mouse-first-move 3s ease-in-out infinite;
-	-webkit-animation: mouse-first-move 3s ease-in-out infinite;
- 	-o-animation: mouse-first-move 3s ease-in-out infinite;
+	animation: mouse-first-move 1s ease-in-out infinite;
+	-moz-animation: mouse-first-move 1s ease-in-out infinite;
+	-webkit-animation: mouse-first-move 1s ease-in-out infinite;
+ 	-o-animation: mouse-first-move 1s ease-in-out infinite;
 }
 
 .icon-mouse-arrow:last-child{
-	animation: mouse-second-move 3s ease-in-out infinite;
-	-moz-animation: mouse-second-move 3s ease-in-out infinite;
-	-webkit-animation: mouse-second-move 3s ease-in-out infinite;
- 	-o-animation: mouse-second-move 3s ease-in-out infinite;
+	animation: mouse-second-move 1s ease-in-out infinite;
+	-moz-animation: mouse-second-move 1s ease-in-out infinite;
+	-webkit-animation: mouse-second-move 1s ease-in-out infinite;
+ 	-o-animation: mouse-second-move 1s ease-in-out infinite;
 }
 
 .b-block-menu{
@@ -571,7 +571,6 @@ input{
 }
 
 .dot-yellow{
-	opacity: 0;
 	position: absolute;
 	width: 13px;
 	height: 13px;
@@ -582,7 +581,6 @@ input{
 }
 
 .dot-white{
-	opacity: 0;
 	position: absolute;
 	width: 8px;
 	height: 8px;
@@ -593,7 +591,6 @@ input{
 }
 
 .dot-white-small{
-	opacity: 0;
 	position: absolute;
 	width: 5px;
 	height: 5px;
@@ -603,20 +600,31 @@ input{
 	margin-top: -2px;
 }
 
-.dot-yellow.dot-show,
-.dot-white.dot-show,
-.dot-white-small.dot-show{
-	-webkit-transition: opacity 250ms ease-out;
-    -moz-transition: opacity 250ms ease-out;
-    -ms-transition: opacity 250ms ease-out;
-    -o-transition: opacity 250ms ease-out;
-    transition: opacity 250ms ease-out;
+.dot-yellow,
+.dot-white,
+.dot-white-small{
+	opacity: 0;
+	-webkit-transform: scale(0.2);
+	   -moz-transform: scale(0.2);
+	    -ms-transform: scale(0.2);
+	   	 -o-transform: scale(0.2);
+			transform: scale(0.2);
+	-webkit-transition: opacity 400ms ease-out, transform 400ms ease-out;
+    -moz-transition: opacity 400ms ease-out, transform 400ms ease-out;
+    -ms-transition: opacity 400ms ease-out, transform 400ms ease-out;
+    -o-transition: opacity 400ms ease-out, transform 400ms ease-out;
+    transition: opacity 400ms ease-out, transform 400ms ease-out;
 }
 
 .dot-yellow.dot-show,
 .dot-white.dot-show,
 .dot-white-small.dot-show{
 	opacity: 1;
+	-webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+	    -ms-transform: scale(1);
+	   	 -o-transform: scale(1);
+			transform: scale(1);
 }
 
 .b-geography-legend{
