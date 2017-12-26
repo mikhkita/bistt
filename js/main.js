@@ -72,7 +72,7 @@ $(document).ready(function(){
 
     function showDots(){
         var delayCoef = 1,
-            delayYellow = 50,
+            delayYellow = 75,
             delay = 0;
         $(".dot-white, .dot-white-small, .dot-yellow").each(function(){
             var el = this;
@@ -97,6 +97,9 @@ $(document).ready(function(){
         afterLoad: function(anchorLink, index){
             if(index === 4 && !$('.b-geography-map').hasClass("dots-loaded")){
                 showDots();
+            }
+            if(index === 5){
+                $('.b-map-city a:first-child').click();
             }
         },
 
@@ -243,7 +246,7 @@ $(document).ready(function(){
             },
             title: "Офис"
         });
-        this.marker.setAnimation(google.maps.Animation.BOUNCE);
+        //this.marker.setAnimation(google.maps.Animation.BOUNCE);
     }
 
     //массив со всеми картами
@@ -268,6 +271,10 @@ $(document).ready(function(){
         var mapObj = maps[$this.index()];
         google.maps.event.trigger(mapObj.map, 'resize');
         mapObj.map.setCenter(mapObj.myPlace);
+        mapObj.marker.setAnimation(google.maps.Animation.BOUNCE);
+        setTimeout(function() {
+            mapObj.marker.setAnimation(null)
+        }, 725);
     });
 
     /*var options = {
