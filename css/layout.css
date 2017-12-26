@@ -64,6 +64,7 @@
 html,
 body {
 	position: relative;
+	height: 100%;
 }
 body {
 	min-width: 1000px;
@@ -123,11 +124,6 @@ input.error,textarea.error{
 
 .b{
 	position: relative;
-}
-.b-block{
-	position: relative;
-	width: 1000px;
-	margin: 0px auto;
 }
 .b-absolute{
 	position: absolute;
@@ -264,9 +260,84 @@ input{
 	font-size: 16px;
 }
 
+.b-table{
+	display: table;
+}
+
+.b-table-cell{
+	display: table-cell;
+	vertical-align: middle;
+}
+
 /*-----------Главная------------*/
 
-.b-screen .fp-bg{
+.slider-page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.b-screen{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: table;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	-webkit-transform: scale(0.8);
+	   -moz-transform: scale(0.8);
+	    -ms-transform: scale(0.8);
+	   	 -o-transform: scale(0.8);
+			transform: scale(0.8);
+	-webkit-transition: transform 500ms ease-out;
+	-moz-transition: transform 500ms ease-out;
+	-ms-transition: transform 500ms ease-out;
+	-o-transition: transform 500ms ease-out;
+	transition: transform 500ms ease-out;
+}
+
+.b-screen.move-slide{
+	z-index: 2;
+	-webkit-transform: translateY(-100%);
+	   -moz-transform: translateY(-100%);
+	    -ms-transform: translateY(-100%);
+	   	 -o-transform: translateY(-100%);
+			transform: translateY(-100%);
+}
+
+.b-screen.move-slide.move-top{
+	z-index: -1;
+}
+
+.b-screen.current-slide{
+	z-index: 1;
+	-webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+	    -ms-transform: scale(1);
+	   	 -o-transform: scale(1);
+			transform: scale(1);
+}
+
+.slider-back{
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #aaa;
+}
+
+	.b-screen .b-block,
+	.b-screen .b-table{
+		height: 100%;
+	}
+
+	.b-screen .b-table{
+		width: 100%;
+	}
+
+.b-screen-back{
 	position: absolute;
 	top: 0px;
 	width: 100%;
@@ -278,23 +349,23 @@ input{
 	margin-bottom: 32px;
 }
 
-.b-screen-head .fp-bg{
+.b-screen-head .b-screen-back{
 	background-image: url(../i/back-1-shakal.jpg);
 }
 
-.b-screen-about .fp-bg{
+.b-screen-about .b-screen-back{
 	background-image: url(../i/back-2-shakal.jpg);
 }
 
-.b-screen-services .fp-bg{
+.b-screen-services .b-screen-back{
 	background-image: url(../i/back-3-shakal.jpg);
 }
 
-.b-screen-geography .fp-bg{
+.b-screen-geography .b-screen-back{
 	background-image: url(../i/back-2-shakal.jpg);
 }
 
-.b-screen-contacts .fp-bg{
+.b-screen-contacts .b-screen-back{
 	background-image: url(../i/back-5-shakal.jpg);
 }
 
@@ -495,7 +566,7 @@ input{
 	margin-top: 44px;
 }
 
-.b-screen-head .b-screen-content{
+.b-screen-head .b-table{
 	width: 450px;
 }
 
@@ -829,23 +900,25 @@ input{
     background: transparent;
 }
 
-/*----------FullPage.js-----------*/
+/*----------slider-styles-----------*/
 
-.fp-tableCell{
-	padding-top: 50px;
-}
 
-#fp-nav.right{
+#slider-nav{
 	right: auto;
     left: calc(50% + 553px);
+    position: fixed;
+    z-index: 100;
+    margin-top: -97px;
+    top: 50%;
 }
 
-	#fp-nav ul{
+	#slider-nav ul{
 		/*margin-right: -10px;*/
 		float: right;
 	}
 
-		#fp-nav ul li{
+		#slider-nav ul li{
+			display: block;
 			position: relative;
 			width: 31px;
 			height: 31px;
@@ -853,7 +926,17 @@ input{
 			margin-bottom: 8px;
 		}
 
-			#fp-nav ul li a span{
+		#slider-nav ul li a{
+			display: block;
+		    position: relative;
+		    z-index: 1;
+		    width: 100%;
+		    height: 100%;
+		    cursor: pointer;
+		    text-decoration: none;
+		}
+
+			#slider-nav ul li a span{
 				vertical-align: middle;
 			    display: inline-block;
 				margin: 3px 0 0 8px;
@@ -865,9 +948,13 @@ input{
 				position: static;
 				top: auto;
 				left: auto;
+				-webkit-transition: all 0.1s ease-in-out;
+			    -moz-transition: all 0.1s ease-in-out;
+			    -o-transition: all 0.1s ease-in-out;
+			    transition: all 0.1s ease-in-out;
 			}
 
-			#fp-nav ul li a.active span{
+			#slider-nav ul li a.active span{
 				width: 15px;
 				height: 15px;
 				margin: 3px 0 0 8px;
@@ -881,7 +968,7 @@ input{
 				background-color: #FFF;
 			}
 
-			#fp-nav ul li:hover a span{
+			#slider-nav ul li:hover a span{
 			    width: 15px;
 			    height: 15px;
 				margin: 3px 0 0 8px;
@@ -893,7 +980,7 @@ input{
 	    		border: 1px solid #fece0b;
 			}
 
-			#fp-nav ul li:hover .screen-bubbles-item{
+			#slider-nav ul li:hover .screen-bubbles-item{
 				opacity: 1;
 				visibility: visible;
 				-webkit-transform: translateX(-10px);
@@ -903,7 +990,7 @@ input{
 			    transform: translateX(-10px);
 			}
 
-			#fp-nav ul li:hover a.active span{
+			#slider-nav ul li:hover a.active span{
 			    width: 15px;
 			    height: 15px;
 				margin: 3px 0 0 8px;
