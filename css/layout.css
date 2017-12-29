@@ -99,7 +99,16 @@ input.error,textarea.error{
 }
 
 .init-hide{
-	display: none;
+	opacity: 0;
+	visibility: hidden;
+}
+
+.init-fadeIn{
+ 	-webkit-transition: visibility 300ms ease-out, opacity 300ms ease-out;
+    -moz-transition: visibility 300ms ease-out, opacity 300ms ease-out;
+    -ms-transition: visibility 300ms ease-out, opacity 300ms ease-out;
+    -o-transition: visibility 300ms ease-out, opacity 300ms ease-out;
+    transition: visibility 300ms ease-out, opacity 300ms ease-out;
 }
 
 .fancybox-inner{
@@ -399,57 +408,63 @@ input{
 	}
 }
 
-/*@-webkit-keyframes scaleDown{
-	to{
-		-webkit-transform:scale(0.8);
-		transform:scale(0.8);
-	}
-}
-@keyframes scaleDown{
-	to{
-		-webkit-transform:scale(0.8);
-		transform:scale(0.8);
-	}
-}
-@-webkit-keyframes moveFromTop{
-	from{
-		-webkit-transform:translateY(-100%);
-		transform:translateY(-100%);
-	}
-}
-@keyframes moveFromTop{
-	from{
-		-webkit-transform:translateY(-100%);
-		transform:translateY(-100%);
-	}
-}
+/*----scale bachground----*/
 
-@-webkit-keyframes moveToTop{
-	to{
-		-webkit-transform:translateY(-100%);
-		transform:translateY(-100%);
+@-webkit-keyframes slide-zoom {
+	0% {
+		-webkit-transform: scale(1);
+	}
+	50%{
+		-webkit-transform: scale(1.1);
+	}
+	100%{
+		-webkit-transform: scale(1);
 	}
 }
-@keyframes moveToTop{
-	to{
-		-webkit-transform:translateY(-100%);
-		transform:translateY(-100%);
+@-moz-keyframes slide-zoom {
+	0% {
+		-moz-transform: scale(1);
+	}
+	50%{
+		-moz-transform: scale(1.1);
+	}
+	100%{
+		-moz-transform: scale(1);
 	}
 }
-
-@-webkit-keyframes scaleUp{
-	from{
-		-webkit-transform:scale(0.8);
-		transform:scale(0.8);
+@-ms-keyframes slide-zoom {
+	0% {
+		-ms-transform: scale(1);
+	}
+	50%{
+		-ms-transform: scale(1.1);
+	}
+	100%{
+		-ms-transform: scale(1);
 	}
 }
-@keyframes scaleUp{
-	from
-	{
-		-webkit-transform:scale(0.8);
-		transform:scale(0.8);
+@-o-keyframes slide-zoom {
+	0% {
+		-o-transform: scale(1);
 	}
-}*/
+	50%{
+		-o-transform: scale(1.1);
+	}
+	100%{
+		-o-transform: scale(1);
+	}
+}
+@keyframes slide-zoom {
+	0% {
+		transform: scale(1);
+	}
+	50%{
+		transform: scale(1.1);
+	}
+	100%{
+		transform: scale(1);
+	}
+}
 
 .b-screen{
 	position: absolute;
@@ -490,11 +505,11 @@ input{
 
 .move-up{
 	z-index: 5 !important;
-	-webkit-animation: move-up 500ms ease-out both;
-	   -moz-animation: move-up 500ms ease-out both;
-	    -ms-animation: move-up 500ms ease-out both;
-	   	 -o-animation: move-up 500ms ease-out both;
-			animation: move-up 500ms ease-out both;
+	-webkit-animation: move-up 500ms cubic-bezier(.49,.14,.5,.74) both;
+	   -moz-animation: move-up 500ms cubic-bezier(.49,.14,.5,.74) both;
+	    -ms-animation: move-up 500ms cubic-bezier(.49,.14,.5,.74) both;
+	   	 -o-animation: move-up 500ms cubic-bezier(.49,.14,.5,.74) both;
+			animation: move-up 500ms cubic-bezier(.49,.14,.5,.74) both;
 }
 
 .current-slide{
@@ -527,6 +542,13 @@ input{
 	background-repeat: no-repeat;
 	overflow: hidden;
 	margin-bottom: 32px;
+}
+
+.b-screen-back{
+	animation: slide-zoom 20s ease-in-out infinite;
+	-moz-animation: slide-zoom 20s ease-in-out infinite;
+	-webkit-animation: slide-zoom 20s ease-in-out infinite;
+ 	-o-animation: slide-zoom 20s ease-in-out infinite;
 }
 
 .b-screen-head .b-screen-back{
@@ -910,18 +932,18 @@ input{
 	width: 390px;
 	font-size: 20px;
 	line-height: 32px;
-	padding-right: 30px;
+	padding-right: 20px;
 }
-	.b-contacts-info{
+	.b-contacts-body{
 		margin-top: 32px;
 	}
-		.b-contacts-item{
+		.b-contacts-info{
 			margin-bottom: 16px;
 		}
-			.b-contacts-item p{
+			.b-contacts-info p{
 				display: inline-block;
 			}
-			.b-contacts-item-right{
+			.b-contacts-info-right{
 				float: right;
 				width: calc(100% - 50px);
 			}

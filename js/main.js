@@ -71,7 +71,7 @@ $(document).ready(function(){
     }
 
     function showDots(){
-        if(!$('.b-geography-map').hasClass("dots-loaded")){
+        //if(!$('.b-geography-map').hasClass("dots-loaded")){
             var delayCoef = 1,
             delayYellow = 75,
             delay = 0;
@@ -89,7 +89,17 @@ $(document).ready(function(){
                 delayCoef++;
             });
             $('.b-geography-map').addClass("dots-loaded");
+        //}
+    }
+
+    function hideDots(){
+        if($('.b-geography-map').hasClass("dots-loaded")){
+            $(".dot-white, .dot-white-small, .dot-yellow").each(function(){
+                var el = this;
+                $(el).removeClass('dot-show');
+            });
         }
+        $('.b-geography-map').removeClass("dots-loaded");
     }
 
     var mapView = false,
@@ -149,9 +159,11 @@ $(document).ready(function(){
         $(this).removeClass("move-up scale-up move-down scale-down");
         setTimeout(function() {
             nowScroll = false;
-        }, 150);
+        }, 250);
         if(parseInt($('.current-slide').attr("data-id")) === 4){
             showDots();
+        }else{
+            hideDots();
         }
         if(parseInt($('.current-slide').attr("data-id")) === 5 && !mapView){
             maps[0].marker.setAnimation(google.maps.Animation.BOUNCE);
@@ -253,6 +265,7 @@ $(document).ready(function(){
     });
 
     $(window).on('load', function(){
+        console.log("234");
         $('.init-hide').each(function(){
             $(this).removeClass("init-hide");
         });
@@ -352,12 +365,12 @@ $(document).ready(function(){
     $('.b-map-city a').on('click', function(){
         $this = $(this);
         $this.siblings("a").each(function(){
-            var block = $(this).attr("data-map");
-            $('#'+block).addClass("hide");
+            $('#'+$(this).attr("data-map")).addClass("hide");
+            $('#'+$(this).attr("data-contacts")).addClass("hide");
             $(this).removeClass("active");
         });
-        var block = $this.attr("data-map");
-        $('#'+block).removeClass("hide");
+        $('#'+$this.attr("data-map")).removeClass("hide");
+        $('#'+$this.attr("data-contacts")).removeClass("hide");
         $this.addClass("active");
 
         //Обновить карту

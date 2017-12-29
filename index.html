@@ -69,7 +69,7 @@
 			</div>
 			<div class="b-screen b-screen-about" data-id="2" data-anchor="about">
 				<div class="b-screen-back" data-back-full="i/back-2.jpg"></div>
-				<div class="b-tube init-hide">
+				<div class="b-tube init-hide init-fadeIn">
 					<img src="i/tube.png" data-retina="i/tube@2x.png">
 				</div>
 				<div class="b-block">
@@ -181,26 +181,65 @@
 					<div class="b-table">
 						<div class="b-screen-content b-table-cell">
 							<div class="clearfix">
-								<div class="b-contacts">
-									<h2 class="b-title">Контакты</h2>
-									<h3 class="b-title yellow">г. Томск, головной офис</h3>
-									<div class="b-contacts-info">
-										<div class="b-contacts-item">
-											<span class="icon-phone"></span><div class="b-contacts-item-right"><a href="tel:+73822430063">+7 (3822) 43-00-63</a></div>
-										</div>
-										<div class="b-contacts-item">
-											<span class="icon-msg"></span><div class="b-contacts-item-right"><a href="mailto:ttsib@ttsib@mail.ru">ttsib@ttsib.ru</a></div>
-										</div>
-										<div class="b-contacts-item">
-											<span class="icon-map"></span><div class="b-contacts-item-right"><p>634041, РФ, Томская область, г.&nbsp;Томск, пр.&nbsp;Комсомольский&nbsp;70</p></div>
+								<div id="contacts-tomsk" class="b-contacts">
+									<div class="b-contacts-item">
+										<h2 class="b-title">Контакты</h2>
+										<h3 class="b-title yellow">г. Томск, головной офис</h3>
+										<div class="b-contacts-body">
+											<div class="b-contacts-info">
+												<span class="icon-phone"></span><div class="b-contacts-info-right"><a href="tel:+73822430063">+7 (3822) 43-00-63</a></div>
+											</div>
+											<div class="b-contacts-info">
+												<span class="icon-msg"></span><div class="b-contacts-info-right"><a href="mailto:ttsib@ttsib@mail.ru">ttsib@ttsib.ru</a></div>
+											</div>
+											<div class="b-contacts-info">
+												<span class="icon-map"></span><div class="b-contacts-info-right"><p>634041, РФ, Томская область, г.&nbsp;Томск, пр.&nbsp;Комсомольский&nbsp;70</p></div>
+											</div>
 										</div>
 									</div>
 								</div>
+
+								<div id="contacts-strezhevoi" class="b-contacts hide">
+									<div class="b-contacts-item">
+										<h2 class="b-title">Контакты</h2>
+										<h3 class="b-title yellow">г. Стрежевой, головной офис</h3>
+										<div class="b-contacts-body">
+											<div class="b-contacts-info">
+												<span class="icon-phone"></span><div class="b-contacts-info-right"><a href="tel:+73822430063">+7 (3822) 43-00-63</a></div>
+											</div>
+											<div class="b-contacts-info">
+												<span class="icon-msg"></span><div class="b-contacts-info-right"><a href="mailto:ttsib@ttsib@mail.ru">ttsib@ttsib.ru</a></div>
+											</div>
+											<div class="b-contacts-info">
+												<span class="icon-map"></span><div class="b-contacts-info-right"><p>634041, РФ, Томская область, г.&nbsp;Стрежевой, пр.&nbsp;Комсомольский&nbsp;70</p></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div id="contacts-krasnoyarsk" class="b-contacts hide">
+									<div class="b-contacts-item">
+										<h2 class="b-title">Контакты</h2>
+										<h3 class="b-title yellow">г. Красноярск, головной офис</h3>
+										<div class="b-contacts-body">
+											<div class="b-contacts-info">
+												<span class="icon-phone"></span><div class="b-contacts-info-right"><a href="tel:+73822430063">+7 (3822) 43-00-63</a></div>
+											</div>
+											<div class="b-contacts-info">
+												<span class="icon-msg"></span><div class="b-contacts-info-right"><a href="mailto:ttsib@ttsib@mail.ru">ttsib@ttsib.ru</a></div>
+											</div>
+											<div class="b-contacts-info">
+												<span class="icon-map"></span><div class="b-contacts-info-right"><p>634041, РФ, Красноярский край, г.&nbsp;Красноярск, пр.&nbsp;Комсомольский&nbsp;70</p></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
 								<div class="b-map-block">
 									<div class="b-map-city">
-										<a href="#" onclick="return false;" class="b-btn b-btn-city active" data-coord-x="55.754407" data-coord-y="37.625151" data-map="map-tomsk">г. Томск</a>
-										<a href="#" onclick="return false;" class="b-btn b-btn-city" data-coord-x="55.755407" data-coord-y="37.625151" data-map="map-strezhevoi">г. Стрежевой</a>
-										<a href="#" onclick="return false;" class="b-btn b-btn-city" data-coord-x="55.756407" data-coord-y="37.625151" data-map="map-krasnoyarsk">г. Красноярск</a>
+										<a href="#" onclick="return false;" class="b-btn b-btn-city active" data-coord-x="55.754407" data-coord-y="37.625151" data-map="map-tomsk" data-contacts="contacts-tomsk">г. Томск</a>
+										<a href="#" onclick="return false;" class="b-btn b-btn-city" data-coord-x="55.755407" data-coord-y="37.625151" data-map="map-strezhevoi" data-contacts="contacts-strezhevoi">г. Стрежевой</a>
+										<a href="#" onclick="return false;" class="b-btn b-btn-city" data-coord-x="55.756407" data-coord-y="37.625151" data-map="map-krasnoyarsk" data-contacts="contacts-krasnoyarsk">г. Красноярск</a>
 									</div>
 									<div id="map-tomsk" class="b-map"></div>
 									<div id="map-strezhevoi" class="b-map hide"></div>
