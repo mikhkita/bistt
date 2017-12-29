@@ -103,13 +103,14 @@ $(document).ready(function(){
     }
 
     var mapView = false,
-        nowScroll = false;
+        nowScroll = false,
+        tolerant = 0;
 
     var page = document.body;
 
     if (page.addEventListener) {
         if ('onwheel' in document) {
-            // IE9+, FF17+
+            // IE9+, FF17+, Ch31+
             page.addEventListener("wheel", onWheel);
         }else if('onmousewheel' in document) {
             // устаревший вариант события
@@ -125,31 +126,40 @@ $(document).ready(function(){
     function onWheel(e) {
         e = e || window.event;
 
-        var delta = e.deltaY || e.detail || e.wheelDelta;
+        console.log(tolerant , nowScroll);
+        if(!nowScroll){
+            var delta = e.deltaY || e.detail || e.wheelDelta;
+            tolerant += delta;
+            //console.log(tolerant, delta, nowScroll);
 
-        if(Math.abs(delta) > 10 && !nowScroll){
-            nowScroll = true;
-            if(delta < 0){
-                console.log("scroll-up");
+            if(Math.abs(tolerant) > 20){
+                nowScroll = true;
 
-                var currentID = parseInt($('.current-slide').attr("data-id"));
-                var prevID = currentID > 1 ? currentID - 1 : $('.b-screen').length;
+                if(tolerant < 0){
+                    console.log("scroll-up");
 
-                $('.b-screen[data-id="'+prevID+'"]').addClass("move-down current-slide")
-                $('.b-screen[data-id="'+currentID+'"]').addClass("scale-down").removeClass("current-slide");
-                $('#slider-nav a.active').removeClass("active");
-                $('#slider-nav a[data-id="'+prevID+'"]').addClass("active");
-            }else{
-                console.log("scroll-down");
+                    var currentID = parseInt($('.current-slide').attr("data-id"));
+                    var prevID = currentID > 1 ? currentID - 1 : $('.b-screen').length;
 
-                var currentID = parseInt($('.current-slide').attr("data-id"));
-                var nextID = currentID < $('.b-screen').length ? currentID + 1 : 1;
+                    $('.b-screen[data-id="'+prevID+'"]').addClass("move-down current-slide")
+                    $('.b-screen[data-id="'+currentID+'"]').addClass("scale-down").removeClass("current-slide");
+                    $('#slider-nav a.active').removeClass("active");
+                    $('#slider-nav a[data-id="'+prevID+'"]').addClass("active");
+                }else{
+                    console.log("scroll-down");
 
-                $('.b-screen[data-id="'+currentID+'"]').addClass("move-up").removeClass("current-slide");
-                $('.b-screen[data-id="'+nextID+'"]').addClass("scale-up current-slide");
-                $('#slider-nav a.active').removeClass("active");
-                $('#slider-nav a[data-id="'+nextID+'"]').addClass("active");
+                    var currentID = parseInt($('.current-slide').attr("data-id"));
+                    var nextID = currentID < $('.b-screen').length ? currentID + 1 : 1;
+
+                    $('.b-screen[data-id="'+currentID+'"]').addClass("move-up").removeClass("current-slide");
+                    $('.b-screen[data-id="'+nextID+'"]').addClass("scale-up current-slide");
+                    $('#slider-nav a.active').removeClass("active");
+                    $('#slider-nav a[data-id="'+nextID+'"]').addClass("active");
+                }
             }
+            window.location.hash = $(".current-slide").attr("data-hash");
+        }else{
+            tolerant = 0;
         }
 
         e.preventDefault ? e.preventDefault() : (e.returnValue = false);
@@ -158,7 +168,9 @@ $(document).ready(function(){
     $('.b-screen').bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(e){
         $(this).removeClass("move-up scale-up move-down scale-down");
         setTimeout(function() {
+            console.log("nowScroll-cancel");
             nowScroll = false;
+            tolerant = 0;
         }, 250);
         if(parseInt($('.current-slide').attr("data-id")) === 4){
             showDots();
@@ -177,6 +189,8 @@ $(document).ready(function(){
     $('#slider-nav a').on('click', function(){
         if(!nowScroll){
             nowScroll = true;
+            tolerant = 0;
+
             var currentID = parseInt($('.current-slide').attr("data-id"));
             var buttonID = parseInt($(this).attr("data-id"));
             if(currentID === buttonID){
@@ -195,41 +209,6 @@ $(document).ready(function(){
             $(this).addClass("active");
         }
     });
-
-    /*var mapView = false;
-
-    $('#fullpage').fullpage({
-        sectionSelector: '.b-screen',
-        navigation: true,
-        navigationPosition: 'right',
-        afterLoad: function(anchorLink, index){
-            if(index === 4 && !$('.b-geography-map').hasClass("dots-loaded")){
-                showDots();
-            }
-            if(index === 5 && !mapView){
-                maps[0].marker.setAnimation(google.maps.Animation.BOUNCE);
-                setTimeout(function() {
-                    maps[0].marker.setAnimation(null)
-                }, 725);
-                mapView = true;
-            }
-        },
-
-
-        parallax: true,
-                parallaxKey: 'YWx2YXJvdHJpZ28uY29tXzlNZGNHRnlZV3hzWVhnPTFyRQ==',
-                parallaxOptions: {
-                    type: 'reveal',
-                    percentage: 62,
-                    property: 'translate'
-                },
-    });*/
-
-    //$('.b-screen-about').prepend( $('.fp-tableCell .b-tube'));
-
-    /*$('#fp-nav ul li').each(function(){
-        $(this).append($('.screen-bubbles .screen-bubbles-item:first-child'));
-    });*/
 
     $('.b-mouse').on('click', function(){
         $('#slider-nav a[data-id="2"]').click();
@@ -265,10 +244,15 @@ $(document).ready(function(){
     });
 
     $(window).on('load', function(){
-        console.log("234");
+        console.log("load");
         $('.init-hide').each(function(){
             $(this).removeClass("init-hide");
         });
+        if(!!window.location.hash){
+            var hash = window.location.hash;
+            var slideID = $('*[data-hash="'+hash+'"]').attr("data-id");
+            $('#slider-nav a[data-id="'+slideID+'"]').click();
+        }
     });
 
     var styles = [

@@ -505,11 +505,11 @@ input{
 
 .move-up{
 	z-index: 5 !important;
-	-webkit-animation: move-up 500ms cubic-bezier(.49,.14,.5,.74) both;
-	   -moz-animation: move-up 500ms cubic-bezier(.49,.14,.5,.74) both;
-	    -ms-animation: move-up 500ms cubic-bezier(.49,.14,.5,.74) both;
-	   	 -o-animation: move-up 500ms cubic-bezier(.49,.14,.5,.74) both;
-			animation: move-up 500ms cubic-bezier(.49,.14,.5,.74) both;
+	-webkit-animation: move-up 500ms cubic-bezier(.79,.32,.57,.77) both;
+	   -moz-animation: move-up 500ms cubic-bezier(.79,.32,.57,.77) both;
+	    -ms-animation: move-up 500ms cubic-bezier(.79,.32,.57,.77) both;
+	   	 -o-animation: move-up 500ms cubic-bezier(.79,.32,.57,.77) both;
+			animation: move-up 500ms cubic-bezier(.79,.32,.57,.77) both;
 }
 
 .current-slide{
@@ -520,7 +520,7 @@ input{
 	z-index: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #aaa;
+	background-color: #3d3938;
 }
 
 	.b-screen .b-block,
