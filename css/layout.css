@@ -1125,6 +1125,7 @@ ul.b-breadcrumbs {
 		}
 
 .b-footer{
+	overflow: hidden;
 	background-color: #3b3636;
 }
 
