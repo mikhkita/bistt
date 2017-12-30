@@ -70,13 +70,12 @@ $(document).ready(function(){
         });
     }
 
-    var scrollID,
-        blockScroll = false;
-
     if($('.main-page').length){
         var mapView = false,
             nowScroll = false,
-            tolerant = 0;
+            tolerant = 0,
+            blockScroll = false,
+            scrollID;
         var page = document.body;
         if (page.addEventListener) {
             if ('onwheel' in document) {
@@ -103,12 +102,11 @@ $(document).ready(function(){
                 //console.log(tolerant, delta, nowScroll);
 
                 if(Math.abs(tolerant) > 20){
+                    nowScroll = true;
                     blockScroll = true;
                     scrollID = setTimeout(function(){
                         blockScroll = false;
-                    }, 300);
-
-                    nowScroll = true;
+                    }, 100);
 
                     if(tolerant < 0){
                         console.log("scroll-up");
@@ -137,7 +135,7 @@ $(document).ready(function(){
                 clearTimeout(scrollID);
                 scrollID = setTimeout(function(){
                     blockScroll = false;
-                }, 300);
+                }, 100);
                 tolerant = 0;
             }
 

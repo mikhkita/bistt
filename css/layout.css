@@ -499,38 +499,38 @@ input{
 
 .scale-down{
 	z-index: 3 !important;
-	-webkit-animation: scale-down 500ms ease-out both;
-	   -moz-animation: scale-down 500ms ease-out both;
-	    -ms-animation: scale-down 500ms ease-out both;
-	   	 -o-animation: scale-down 500ms ease-out both;
-			animation: scale-down 500ms ease-out both;
+	-webkit-animation: scale-down 400ms ease-out both;
+	   -moz-animation: scale-down 400ms ease-out both;
+	    -ms-animation: scale-down 400ms ease-out both;
+	   	 -o-animation: scale-down 400ms ease-out both;
+			animation: scale-down 400ms ease-out both;
 }
 
 .scale-up{
 	z-index: 3 !important;
-	-webkit-animation: scale-up 500ms ease-out both;
-	   -moz-animation: scale-up 500ms ease-out both;
-	    -ms-animation: scale-up 500ms ease-out both;
-	   	 -o-animation: scale-up 500ms ease-out both;
-			animation: scale-up 500ms ease-out both;
+	-webkit-animation: scale-up 400ms ease-out both;
+	   -moz-animation: scale-up 400ms ease-out both;
+	    -ms-animation: scale-up 400ms ease-out both;
+	   	 -o-animation: scale-up 400ms ease-out both;
+			animation: scale-up 400ms ease-out both;
 }
 
 .move-down{
 	z-index: 5 !important;
-	-webkit-animation: move-down 500ms ease-out both;
-	   -moz-animation: move-down 500ms ease-out both;
-	    -ms-animation: move-down 500ms ease-out both;
-	   	 -o-animation: move-down 500ms ease-out both;
-			animation: move-down 500ms ease-out both;
+	-webkit-animation: move-down 400ms ease-out both;
+	   -moz-animation: move-down 400ms ease-out both;
+	    -ms-animation: move-down 400ms ease-out both;
+	   	 -o-animation: move-down 400ms ease-out both;
+			animation: move-down 400ms ease-out both;
 }
 
 .move-up{
 	z-index: 5 !important;
-	-webkit-animation: move-up 500ms cubic-bezier(.46,.08,.58,.84) both;
-	   -moz-animation: move-up 500ms cubic-bezier(.46,.08,.58,.84) both;
-	    -ms-animation: move-up 500ms cubic-bezier(.46,.08,.58,.84) both;
-	   	 -o-animation: move-up 500ms cubic-bezier(.46,.08,.58,.84) both;
-			animation: move-up 500ms cubic-bezier(.46,.08,.58,.84) both;
+	-webkit-animation: move-up 400ms cubic-bezier(.46,.08,.58,.84) both;
+	   -moz-animation: move-up 400ms cubic-bezier(.46,.08,.58,.84) both;
+	    -ms-animation: move-up 400ms cubic-bezier(.46,.08,.58,.84) both;
+	   	 -o-animation: move-up 400ms cubic-bezier(.46,.08,.58,.84) both;
+			animation: move-up 400ms cubic-bezier(.46,.08,.58,.84) both;
 }
 
 .current-slide{
