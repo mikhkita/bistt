@@ -70,6 +70,9 @@ $(document).ready(function(){
         });
     }
 
+    var scrollID,
+        blockScroll = false;
+
     if($('.main-page').length){
         var mapView = false,
             nowScroll = false,
@@ -94,12 +97,17 @@ $(document).ready(function(){
             e = e || window.event;
 
             console.log(tolerant , nowScroll);
-            if(!nowScroll){
+            if(!nowScroll && !blockScroll){
                 var delta = e.deltaY || e.detail || e.wheelDelta;
                 tolerant += delta;
                 //console.log(tolerant, delta, nowScroll);
 
                 if(Math.abs(tolerant) > 20){
+                    blockScroll = true;
+                    scrollID = setTimeout(function(){
+                        blockScroll = false;
+                    }, 300);
+
                     nowScroll = true;
 
                     if(tolerant < 0){
@@ -126,6 +134,10 @@ $(document).ready(function(){
                 }
                 window.location.hash = $(".current-slide").attr("data-hash");
             }else{
+                clearTimeout(scrollID);
+                scrollID = setTimeout(function(){
+                    blockScroll = false;
+                }, 300);
                 tolerant = 0;
             }
 
