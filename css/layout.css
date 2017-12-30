@@ -150,7 +150,8 @@ input:-moz-placeholder {
 [class*="icon-"]:before,
 [class^="icon-"]:after, 
 [class*="icon-"]:after,
-.fancybox-close-small:after{
+.fancybox-close-small:after,
+ul.b-breadcrumbs li:after{
 	font-family: 'icomoon' !important;
 	speak: none;
 	font-style: normal;
@@ -165,7 +166,7 @@ input:-moz-placeholder {
 .b-btn{
 	display: inline-block;
 	text-align: left;
-	padding: 20px 24px 19px;
+	padding: 17px 24px 16px;
 	border-radius: 3px;
 	border: 1px solid #fece0b;
 	font-family: 'Geometria-Medium';
@@ -207,13 +208,15 @@ h2.b-title{
 	font-family: 'Merel-Medium';
 	font-size: 48px;
 	line-height: 60px;
-	color: #FFF;
+	color: #3b3636;
+	margin-bottom: 6px;
 }
 
 h3.b-title{
 	font-family: 'Merel-Medium';
 	font-size: 28px;
 	line-height: 38px;
+	color: #3b3636;
 }
 
 .icon-mouse:before{
@@ -279,6 +282,10 @@ input{
 }
 
 /*-----------Главная------------*/
+
+.main-page .b-title{
+	color: #FFF;
+}
 
 .slider-page {
     position: relative;
@@ -505,11 +512,11 @@ input{
 
 .move-up{
 	z-index: 5 !important;
-	-webkit-animation: move-up 500ms cubic-bezier(.79,.32,.57,.77) both;
-	   -moz-animation: move-up 500ms cubic-bezier(.79,.32,.57,.77) both;
-	    -ms-animation: move-up 500ms cubic-bezier(.79,.32,.57,.77) both;
-	   	 -o-animation: move-up 500ms cubic-bezier(.79,.32,.57,.77) both;
-			animation: move-up 500ms cubic-bezier(.79,.32,.57,.77) both;
+	-webkit-animation: move-up 500ms cubic-bezier(.46,.08,.58,.84) both;
+	   -moz-animation: move-up 500ms cubic-bezier(.46,.08,.58,.84) both;
+	    -ms-animation: move-up 500ms cubic-bezier(.46,.08,.58,.84) both;
+	   	 -o-animation: move-up 500ms cubic-bezier(.46,.08,.58,.84) both;
+			animation: move-up 500ms cubic-bezier(.46,.08,.58,.84) both;
 }
 
 .current-slide{
@@ -528,8 +535,13 @@ input{
 		height: 100%;
 	}
 
+	.b-screen .b-block{
+
+	}
+
 	.b-screen .b-table{
 		width: 100%;
+		min-height: 450px;
 	}
 
 .b-screen-back{
@@ -544,7 +556,9 @@ input{
 	margin-bottom: 32px;
 }
 
-.b-screen-back{
+.move-down .b-screen-back,
+.move-up .b-screen-back,
+.current-slide .b-screen-back{
 	animation: slide-zoom 20s ease-in-out infinite;
 	-moz-animation: slide-zoom 20s ease-in-out infinite;
 	-webkit-animation: slide-zoom 20s ease-in-out infinite;
@@ -569,6 +583,26 @@ input{
 
 .b-screen-contacts .b-screen-back{
 	background-image: url(../i/back-5-shakal.jpg);
+}
+
+.b-screen-head .b-screen-content{
+	padding-top: 28px;
+}
+
+.b-screen-about .b-screen-content{
+	padding-top: 20px;
+}
+
+.b-screen-services .b-screen-content{
+	padding-top: 34px;
+}
+
+.b-screen-geography .b-screen-content{
+	padding-top: 30px;
+}
+
+.b-screen-contacts .b-screen-content{
+	padding-top: 50px;
 }
 
 .b-mouse{
@@ -761,7 +795,7 @@ input{
 		}
 
 		.b-menu-contacts .b-btn{
-			padding: 11px 18px;
+			padding: 7px 17px;
 			margin-top: 14px;
 		}
 
@@ -776,7 +810,7 @@ input{
 	.b-screen-head .b-screen-content p{
 		width: 440px;
 		font-size: 26px;
-		line-height: 32px;
+		line-height: 36px;
 		margin-top: 40px;
 	}
 
@@ -927,13 +961,17 @@ input{
 			background-color: #fece0b;
 		}
 
-.b-contacts{
+.b-contacts-item{
 	float: left;
 	width: 390px;
 	font-size: 20px;
 	line-height: 32px;
 	padding-right: 20px;
 }
+
+	.b-screen .b-contacts-item h3{
+		color: #fece0b;
+	}
 	.b-contacts-body{
 		margin-top: 32px;
 	}
@@ -948,7 +986,7 @@ input{
 				width: calc(100% - 50px);
 			}
 
-	.b-screen .b-btn-city{
+	.b-btn-city{
 		padding: 8px 18px;
 		margin-right: 24px;
 		border: 1px solid #FFF;
@@ -969,6 +1007,131 @@ input{
 			height: 355px;
 			margin-top: 24px;
 		}
+
+/*---------Контакты---------*/
+
+.b-content{
+	color: #3b3636;
+	padding: 64px 0 74px 0;
+}
+
+ul.b-breadcrumbs {
+    display: inline-block;
+    text-align: center;
+}
+
+	ul.b-breadcrumbs li {
+	    float: left;
+	}
+		ul.b-breadcrumbs li a, ul.b-breadcrumbs li span{
+			font-family: "Geometria-Medium";
+		    font-size: 16px;
+		    color: #FFF;
+		}
+
+	ul.b-breadcrumbs li:after {
+	    position: relative;
+	    content: "\e900";
+	    font-size: 16px;
+	    padding: 3px 0px;
+	    display: block;
+	    float: left;
+	    line-height: 16px;
+	    font-size: 11px;
+	    font-family: "Geometria-Medium";
+	    color: #FFF;
+	    margin-left: 8px;
+	    margin-right: 8px;
+	}
+
+	ul.b-breadcrumbs li:last-child:after {
+	    display: none;
+	}
+
+	ul.b-breadcrumbs a, ul.b-breadcrumbs span {
+	    padding: 2px 0px;
+	    font-size: 12px;
+	    display: block;
+	    float: left;
+	    line-height: 16px;
+	}
+
+	ul.b-breadcrumbs .nav-link{
+		color: #fece0b;
+	}
+
+.b-content .b-contacts{
+	margin-bottom: 50px;
+}
+
+.b-content .b-contacts,
+.b-content .b-contacts a,
+.b-content .b-contacts h2,
+.b-content .b-contacts h3,
+.b-content .b-contacts [class^="icon-"]:before, 
+.b-content .b-contacts [class*="icon-"]:before{
+	color: #3b3636;
+}
+
+.b-content .b-map{
+	-webkit-box-shadow: 0px 8px 30px 4px rgba(200, 200, 200, 1);
+	-moz-box-shadow:    0px 8px 30px 4px rgba(200, 200, 200, 1);
+	box-shadow:         0px 8px 30px 4px rgba(200, 200, 200, 1);
+}
+
+.b-posts{
+
+}
+
+	.b-posts-item{
+		float: left;
+		width: calc(100%/2 - 12px);
+		margin-right: 24px;
+		margin-bottom: 32px;
+	}
+	.b-posts-item:nth-child(2n){
+		margin-right: 0;
+	}
+
+		.b-posts-item h3{
+			margin-bottom: 16px;
+		}
+
+		.b-posts-item p{
+			font-size: 20px;
+			line-height: 32px;
+		}
+
+.b-requisites{
+
+}
+
+	.b-requisites-item{
+		border-bottom: 1px solid #979797;
+		padding: 8px 0;
+	}
+	.b-requisites-item:last-child{
+		border-bottom: 0;
+	}
+
+		.b-requisites-item-left{
+			display: inline-block;
+			width: 30%;
+		}
+
+		.b-requisites-item-right{
+			display: inline-block;
+			width: calc(70% - 5px);
+		}
+
+.b-footer{
+	background-color: #3b3636;
+}
+
+	.b-footer-top{
+		border-bottom: 1px solid #979797;
+		padding: 32px 0;
+	}
 
 /*-----------Popup-----------*/
 
@@ -1052,7 +1215,7 @@ input{
 	position: absolute;
 	top: -7px;
     right: 34px;
-	padding: 10px 30px 15px;
+	padding: 10px 32px 15px;
 	border-radius: 3px;
 	background-color: #FFF;
 	color: #554e4e;

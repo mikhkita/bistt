@@ -70,36 +70,34 @@ $(document).ready(function(){
         });
     }
 
+    var timers = [];
+
     function showDots(){
-        //if(!$('.b-geography-map').hasClass("dots-loaded")){
-            var delayCoef = 1,
-            delayYellow = 75,
-            delay = 0;
-            $(".dot-white, .dot-white-small, .dot-yellow").each(function(){
-                var el = this;
-                if(!$(el).hasClass("dot-yellow")){
-                    delay = 25 * delayCoef;
-                }else{
-                    delay = 25 * delayCoef + delayYellow;
-                    delayYellow += 75;
-                }
-                setTimeout(function(){
-                    $(el).addClass('dot-show');
-                }, delay);
-                delayCoef++;
-            });
-            $('.b-geography-map').addClass("dots-loaded");
-        //}
+        var delayCoef = 1,
+        delayYellow = 75,
+        delay = 0;
+        $(".dot-white, .dot-white-small, .dot-yellow").each(function(){
+            var el = this;
+            if(!$(el).hasClass("dot-yellow")){
+                delay = 25 * delayCoef;
+            }else{
+                delay = 25 * delayCoef + delayYellow;
+                delayYellow += 75;
+            }
+            timers.push(setTimeout(function(){
+                $(el).addClass('dot-show');
+            }, delay))
+            delayCoef++;
+        });
     }
 
     function hideDots(){
-        if($('.b-geography-map').hasClass("dots-loaded")){
-            $(".dot-white, .dot-white-small, .dot-yellow").each(function(){
-                var el = this;
-                $(el).removeClass('dot-show');
-            });
-        }
-        $('.b-geography-map').removeClass("dots-loaded");
+        timers.forEach(function(item, i, arr) {
+            clearTimeout(item);
+        });
+        $(".dot-white, .dot-white-small, .dot-yellow").each(function(){
+            $(this).removeClass('dot-show');
+        });
     }
 
     var mapView = false,
@@ -334,7 +332,7 @@ $(document).ready(function(){
                 origin: new google.maps.Point(0,0), // origin
                 anchor: new google.maps.Point(23,50), // anchor
             },
-            title: "Офис"
+            title: ""
         });
         //this.marker.setAnimation(google.maps.Animation.BOUNCE);
     }
