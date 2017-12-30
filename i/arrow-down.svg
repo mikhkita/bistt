@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="17px" viewBox="0 0 15 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>right-arrow (2)</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Контакты" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1336.000000, -1268.000000)">
+        <g id="Реквизиты" transform="translate(224.000000, 1249.000000)" fill="#3B3636">
+            <g id="Кнопка" transform="translate(916.000000, 0.000000)">
+                <g id="right-arrow-(2)" transform="translate(203.500000, 28.000000) rotate(90.000000) translate(-203.500000, -28.000000) translate(195.000000, 20.000000)">
+                    <rect id="Rectangle-9" x="0" y="7" width="14" height="2" rx="1"></rect>
+                    <rect id="Rectangle-9" transform="translate(12.192653, 5.192592) rotate(45.000000) translate(-12.192653, -5.192592) " x="7.19265289" y="4.19259186" width="10" height="2" rx="1"></rect>
+                    <rect id="Rectangle-9" transform="translate(12.192653, 10.892665) rotate(-45.000000) translate(-12.192653, -10.892665) " x="7.19265289" y="9.8926651" width="10" height="2" rx="1"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
