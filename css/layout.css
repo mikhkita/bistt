@@ -73,7 +73,7 @@ body {
 	overflow-x: hidden;
 	-webkit-text-size-adjust: none;
 	color: #FFF;
-	font-size: 16px;
+	font-size: 20px;
 	line-height: 18px;
 }
 a{
@@ -219,8 +219,15 @@ h2.b-title{
 
 h3.b-title{
 	font-family: 'Merel-Medium';
-	font-size: 28px;
-	line-height: 38px;
+	font-size: 36px;
+	line-height: 36px;
+	color: #3b3636;
+}
+
+h4{
+	font-family: 'Merel-Medium';
+	font-size: 32px;
+	line-height: 32px;
 	color: #3b3636;
 }
 
@@ -830,7 +837,6 @@ input{
 
 	.b-screen-about .b-screen-content p{
 		width: 554px;
-		font-size: 20px;
 		line-height: 32px;
 		margin-top: 36px;
 	}
@@ -950,6 +956,7 @@ input{
 .b-geography-legend{
 	text-align: center;
 	margin-top: 12px;
+	font-size: 16px;
 }
 
 	.legend-item{
@@ -978,7 +985,6 @@ input{
 .b-contacts-item{
 	float: left;
 	width: 390px;
-	font-size: 20px;
 	line-height: 32px;
 	padding-right: 20px;
 }
@@ -1029,13 +1035,13 @@ input{
 }
 
 	.b-header-title{
-		padding: 42px 0;
+		padding: 38px 0 46px;
 		text-align: center;
 	}
 
 .b-content{
 	color: #3b3636;
-	padding: 64px 0 74px 0;
+	padding: 62px 0 74px 0;
 }
 
 .b-block-menu{
@@ -1088,16 +1094,21 @@ ul.b-breadcrumbs {
 	}
 
 .b-content .b-contacts{
-	margin-bottom: 50px;
+	margin-bottom: 56px;
 }
 
 .b-content .b-contacts,
 .b-content .b-contacts a,
 .b-content .b-contacts h2,
-.b-content .b-contacts h3,
+.b-content .b-contacts h4,
 .b-content .b-contacts [class^="icon-"]:before, 
 .b-content .b-contacts [class*="icon-"]:before{
 	color: #3b3636;
+}
+
+.b-content .b-contacts h4{
+	font-family: 'Merel-Regular';
+	font-size: 28px;
 }
 
 .b-content .b-map{
@@ -1125,7 +1136,6 @@ ul.b-breadcrumbs {
 		}
 
 		.b-posts-item p{
-			font-size: 20px;
 			line-height: 32px;
 		}
 
@@ -1139,12 +1149,12 @@ ul.b-breadcrumbs {
 		right: 0;
 	}
 	.b-requisites-list{
-		margin-top: 58px;
+		margin-top: 63px;
 	}
 
 		.b-requisites-item{
 			border-bottom: 1px solid #979797;
-			padding: 8px 0;
+			padding: 15px 0;
 		}
 		.b-requisites-item:last-child{
 			border-bottom: 0;
