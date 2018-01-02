@@ -125,6 +125,16 @@ input{
 		margin-left: 0;
 	}
 
+	.b-popup form .wrap-input{
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 15px;
+	}
+
+	.b-popup form .wrap-input:last-of-type{
+		margin-bottom: 0;
+	}
+
 }
 
 @media screen and (max-width: 475px){
@@ -142,5 +152,21 @@ input{
 			width: 100%;
 			margin-top: 8px;
 		}
+
+	.b-popup{
+		padding: 14px 24px 24px;
+	}
+
+	.b-popup h2.b-title{
+		padding-right: 40px;
+	}
+
+}
+
+@media screen and (max-width: 385px){
+
+	.b-popup .b-btn{
+		width: 100%;
+	}
 
 }

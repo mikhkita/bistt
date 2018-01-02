@@ -1322,6 +1322,7 @@ ul.b-breadcrumbs {
 	.b-popup .b-btn{
 		float: right;
 		width: calc(50% - 12px);
+		min-width: 180px;
 		padding: 16px 24px 14px;
 		margin-top: 32px;
 	}
