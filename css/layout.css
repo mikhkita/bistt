@@ -326,7 +326,7 @@ input{
 	.mobile-menu ul{
 		padding: 0 15px;
 	}
-		.mobile-menu h2,
+		.mobile-menu h2.b-title,
 		.mobile-menu ul li a{
 			color: #3b3636;
 		}
@@ -898,11 +898,12 @@ input{
 
 .services-list{
 	width: calc(100% - 45px);
-	margin-top: 50px;
+	margin-top: 62px;
 }
 	.services-item{
-		float: left;
-		width: calc(100%/4 - 18px);
+		display: inline-block;
+		vertical-align: top;
+		width: calc(100%/4 - 22px);
 		margin-right: 24px;
 	}
 
