@@ -1,0 +1,103 @@
+@charset "utf-8";
+
+body {
+	min-width: 750px;
+	font-size: 20px;
+	line-height: 18px;
+}
+
+.b-btn{
+	display: inline-block;
+	text-align: left;
+	color: #FFF;
+	padding: 17px 24px 15px;
+	border-radius: 3px;
+	border: 1px solid #fece0b;
+	font-family: 'Geometria-Medium';
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.b-wide-block {
+    position: relative;
+    max-width: 1600px;
+    width: 100%;
+    min-width: 1160px;
+    margin: 0px auto;
+    /*background-color: #FFF;*/
+}
+
+.b-block {
+    width: 100%;
+    max-width: calc(100% - 48px);
+    margin: 0 auto;
+}
+
+h1.b-title{
+	font-family: 'Merel-Medium';
+	font-size: 56px;
+	line-height: 56px;
+	color: #FFF;
+	margin-bottom: 40px;
+}
+
+h2.b-title{
+	font-family: 'Merel-Medium';
+	font-size: 48px;
+	line-height: 60px;
+	color: #3b3636;
+	margin-bottom: 6px;
+}
+
+h3.b-title{
+	font-family: 'Merel-Medium';
+	font-size: 36px;
+	line-height: 36px;
+	color: #3b3636;
+}
+
+h4{
+	font-family: 'Merel-Medium';
+	font-size: 32px;
+	line-height: 32px;
+	color: #3b3636;
+}
+
+input{
+	padding: 15px 24px;
+	border: 1px solid #ffffff;
+	border-radius: 3px;
+	background-color: transparent;
+	color: #FFF;
+	font-family: 'Merel-Regular';
+	font-size: 16px;
+}
+
+/*-----------------------*/
+
+.b-map-block{
+	width: calc(100% - 430px);
+}
+
+.b-footer-menu li a {
+    padding: 0 14px;
+}
+
+@media screen and (max-width: 1024px){
+
+	.b-requisites .b-btn-download {
+	    position: static;
+	    top: auto;
+	    right: auto;
+	    margin-top: 24px;
+	}
+	.b-requisites-list{
+		margin-top: 16px;
+	}
+
+	.b-geography-map{
+		width: 94%;
+		margin-left: 3%;
+	}
+
+}

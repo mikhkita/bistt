@@ -282,6 +282,12 @@ h4{
     color: #fece0b;
     vertical-align: middle;
 }
+.icon-burger-menu:before{
+    content: '\e903';
+    font-size: 28px;
+    color: #fece0b;
+    vertical-align: middle;
+}
 
 input{
 	padding: 15px 24px;
@@ -304,9 +310,31 @@ input{
 
 /*-----------Главная------------*/
 
-.main-page .b-title{
+.main-page h2.b-title,
+.main-page h3.b-title,
+.main-page h4{
 	color: #FFF;
 }
+
+#panel-page{
+	height: 100%;
+}
+
+.mobile-menu{
+
+}
+	.mobile-menu ul{
+		padding: 0 15px;
+	}
+		.mobile-menu h2,
+		.mobile-menu ul li a{
+			color: #3b3636;
+		}
+
+		.mobile-menu ul li a{
+			display: inline-block;
+			padding: 8px 0;
+		}
 
 .slider-page {
     position: relative;
@@ -791,6 +819,15 @@ input{
     	background-size: cover;
 	}
 
+	.burger-menu {
+	    float: right;
+	    cursor: pointer;
+	}
+
+	.burger-menu{
+		display: none;
+	}
+
 	.b-menu{
 		display: inline-block;
 		vertical-align: top;
@@ -1006,15 +1043,19 @@ input{
 				width: calc(100% - 50px);
 			}
 
-	.b-btn-city{
+	.b-map-city .b-btn-city{
 		padding: 8px 18px;
 		margin-right: 24px;
 		border: 1px solid #FFF;
 		margin-top: 20px;
 	}
 
-	.b-btn-city.active{
+	.b-map-city .b-btn-city.active{
 		border: 1px solid #fece0b;
+	}
+
+	.b-map-city .b-btn-city:last-child{
+		margin-right: 0;
 	}
 
 	.b-map-block{
@@ -1163,6 +1204,8 @@ ul.b-breadcrumbs {
 			.b-requisites-item-left{
 				display: inline-block;
 				width: 30%;
+				padding-right: 24px;
+				vertical-align: top;
 			}
 
 			.b-requisites-item-right{
@@ -1184,11 +1227,15 @@ ul.b-breadcrumbs {
 			float: right;
 		}
 
-			.b-footer .b-menu li a {
+			.b-footer-menu{
+				margin-left: 0;
+			}
+
+			.b-footer-menu li a {
 			    padding: 0 26px;
 			}
 
-			.b-footer .b-menu li:last-child a{
+			.b-footer-menu li:last-child a{
 				padding-right: 0;
 			}
 
@@ -1213,6 +1260,7 @@ ul.b-breadcrumbs {
 					opacity: 0.5;
 				    background-position: 50% 50%;
 				    background-repeat: no-repeat;
+				    background-size: cover;
 				    background-image: url(../i/redder.png);
 				    width: 120px;
 				    height: 21px;
@@ -1235,7 +1283,7 @@ ul.b-breadcrumbs {
 	background-color: #3d3938;
 }
 
-	.b-popup h2{
+	.b-popup h2.b-title{
 		font-size: 36px;
 		line-height: 44px;
 		color: #FFF;
@@ -1245,6 +1293,7 @@ ul.b-breadcrumbs {
 	.b-popup h4{
 		font-size: 16px;
 		line-height: 26px;
+		color: #FFF;
 	}
 
 	.b-popup form{
@@ -1272,7 +1321,7 @@ ul.b-breadcrumbs {
 	.b-popup .b-btn{
 		float: right;
 		width: calc(50% - 12px);
-		padding: 15px 24px;
+		padding: 16px 24px 14px;
 		margin-top: 32px;
 	}
 
@@ -1361,7 +1410,7 @@ ul.b-breadcrumbs {
     left: calc(50% + 553px);
     position: fixed;
     z-index: 100;
-    margin-top: -97px;
+    margin-top: -94px;
     top: 50%;
 }
 
@@ -1377,6 +1426,10 @@ ul.b-breadcrumbs {
 			height: 31px;
 			margin: 0;
 			margin-bottom: 8px;
+		}
+
+		#slider-nav ul li:last-child{
+			margin-bottom: 0;
 		}
 
 		#slider-nav ul li a{
@@ -1451,15 +1504,85 @@ ul.b-breadcrumbs {
 	    		border: 1px solid transparent;
 			}
 
+/*-------slideout.js-------*/
+
+.slideout-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 256px;
+  min-height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  z-index: 0;
+  display: none;
+}
+
+.slideout-menu-left {
+  left: 0;
+}
+
+.slideout-menu-right {
+  right: 0;
+}
+
+.slideout-panel {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  background-color: #FFF; /* A background-color is required */
+  min-height: 100vh;
+}
+
+.slideout-open,
+.slideout-open body,
+.slideout-open .slideout-panel {
+  overflow: hidden;
+}
+
+.slideout-open .slideout-menu {
+  display: block;
+}
+
+.b-menu-overlay{
+	display: none;
+    /*-webkit-transition: opacity 150ms ease-out;
+    -moz-transition: opacity 150ms ease-out;
+    -ms-transition: opacity 150ms ease-out;
+    -o-transition: opacity 150ms ease-out;
+    transition: opacity 150ms ease-out;*/
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
 /*-------------------------------*/
 
 
 @media (-webkit-min-device-pixel-ratio: 1.5) {
-	
-}	
-@media screen and (max-width: 1250px){
-	
+	.b-redder a{
+	    background-image: url(../i/redder@2x.png);
+	}
+
 }
-@media screen and (max-width: 1020px){
+
+@media screen and (max-width: 1200px){
+	
+	.b-menu.b-top-menu{
+		display: none;
+	}
+
+	.burger-menu{
+		display: inline-block;
+	}
+
+	#slider-nav{
+		right: 16px;
+	    left: auto;
+	}
 
 }

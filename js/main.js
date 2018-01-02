@@ -70,6 +70,40 @@ $(document).ready(function(){
         });
     }
 
+    var slideout = new Slideout({
+        'panel': document.getElementById('panel-page'),
+        'menu': document.getElementById('mobile-menu'),
+        'side': 'right',
+        'padding': 256,
+        'tolerance': 70
+    });
+
+    $('.mobile-menu').removeClass("hide");
+
+    $('.burger-menu').click(function() {
+        slideout.open();
+        $(".b-menu-overlay").show();
+        return false;
+    });
+    $('.b-menu-overlay').click(function() {
+        slideout.close();
+        $('.b-menu-overlay').hide();
+        return false;
+    });
+
+    slideout.on('open', function() {
+        $('.burger-menu').addClass("menu-on");
+        $(".b-menu-overlay").show();
+    });
+
+    slideout.on('close', function() {
+        $('.burger-menu').removeClass("menu-on");
+        setTimeout(function(){
+            $("body").unbind("touchmove");
+            $(".b-menu-overlay").hide();
+        },100);
+    });
+
     if($('.main-page').length){
         var mapView = false,
             nowScroll = false,

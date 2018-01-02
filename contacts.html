@@ -14,33 +14,40 @@
 	<link rel="stylesheet" href="css/jquery.fullPage.css" type="text/css">
 	<link rel="stylesheet" href="css/layout.css" type="text/css">
 
-	<link rel="stylesheet" media="screen and (min-width: 240px) and (max-width: 768px)" href="css/layout-mobile.css">
+	<link rel="stylesheet" media="screen and (min-width: 768px) and (max-width: 1200px)" href="css/layout-tablet.css">
+	<link rel="stylesheet" media="screen and (min-width: 240px) and (max-width: 767px)" href="css/layout-mobile.css">
 	<meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
 
 	<link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
 </head>
 <body>
 
-	<!--<div id="mobile-menu" class="mobile-menu slideout-menu">
+	<div id="mobile-menu" class="mobile-menu slideout-menu">
 		<ul>
 			<h2 class="b-title">Меню</h2>
-			<li></li>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="about.html">О компании</a></li>
+			<li><a href="services.html">Услуги</a></li>
+			<li><a href="cooperation.html">Сотрудничество</a></li>
+			<li><a href="special.html">Спецпредложения</a></li>
+			<li><a href="contacts.html">Контакты</a></li>
 		</ul>
-	</div>-->
+	</div>
 
-	<div class="pagel-page">
+	<div id="panel-page">
 
 		<div class="b-header">
 			<div class="b-block-menu">
 				<div class="b-block clearfix">
 					<a href="index.html" class="b-logo"></a>
-					<ul class="b-menu">
+					<ul class="b-menu b-top-menu">
 						<li><a href="about.html">О компании</a></li>
 						<li><a href="services.html">Услуги</a></li>
 						<li><a href="cooperation.html">Сотрудничество</a></li>
 						<li><a href="special.html">Спецпредложения</a></li>
 						<li><a href="contacts.html">Контакты</a></li>
 					</ul>
+					<div id="burger-menu" class="burger-menu icon-burger-menu">Меню</div>
 					<div class="b-menu-contacts right">
 						<div><a href="tel:+73822430063">+7 (3822) 43-00-63</a></div>
 						<a href="#b-popup-call" class="fancy b-btn">Заказать звонок</a>
@@ -217,7 +224,7 @@
 			<div class="b-block">
 				<div class="b-footer-top">
 					<a href="index.html" class="b-logo"></a>
-					<ul class="b-menu">
+					<ul class="b-menu b-footer-menu">
 						<li><a href="about.html">О компании</a></li>
 						<li><a href="services.html">Услуги</a></li>
 						<li><a href="cooperation.html">Сотрудничество</a></li>
@@ -231,6 +238,8 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="b-menu-overlay" id="b-menu-overlay" style="display: none;"></div>
 
 	</div>
 	
@@ -283,14 +292,6 @@
 			<a href="#" class="b-btn icon-arrow-right" onclick="$.fancybox.close(); return false;">Закрыть</a>
 		</div>
 
-		<div class="screen-bubbles">
-			<div class="screen-bubbles-item">Главная</div>
-			<div class="screen-bubbles-item">О&nbsp;компании</div>
-			<div class="screen-bubbles-item">Услуги</div>
-			<div class="screen-bubbles-item">География</div>
-			<div class="screen-bubbles-item">Контакты</div>
-		</div>
-
 	</div>
 	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery.fancybox.js"></script>
@@ -307,6 +308,7 @@
 	<script type="text/javascript" src="js/KitAnimate.js"></script>
 	<script type="text/javascript" src="js/device.js"></script>
 	<script type="text/javascript" src="js/KitSend.js"></script>
+	<script type="text/javascript" src="js/slideout.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
