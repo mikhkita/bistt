@@ -121,7 +121,7 @@ input.error,textarea.error{
 	text-decoration: underline;
 }
 .yellow{
-	color: #fece0b;
+	color: #fece0b !important;
 }
 
 .left{
@@ -283,9 +283,9 @@ h4{
     vertical-align: middle;
 }
 .icon-burger-menu:before{
-    content: '\e903';
-    font-size: 28px;
-    color: #fece0b;
+    content: '\e909';
+    font-size: 27px;
+    color: #FFF;
     vertical-align: middle;
 }
 
@@ -654,6 +654,87 @@ input{
 	padding-top: 50px;
 }
 
+.b-screen-menu{
+
+}
+
+	.mobile-menu-contacts{
+		position: absolute;
+		top: 105px;
+	}
+
+	.b-screen-menu h2.b-title{
+		font-size: 28px;
+		line-height: 36px;
+		margin-bottom: 24px;
+	}
+
+	.b-screen-menu .b-table{
+		padding: 110px 0;
+	}
+
+	.b-screen-menu ul{
+		
+	}
+
+		.b-screen-menu ul li{
+			line-height: 26px;
+			margin-bottom: 16px;
+		}
+
+		.b-screen-menu ul li:last-child{
+			margin-bottom: 0;
+		}
+
+	.menu-footer{
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		font-size: 16px;
+		color: rgba(255,255,255,0.5);
+	}
+
+		.menu-footer-up{
+			border-bottom: 2px solid rgba(151,151,151,0.3);
+		}
+
+			.menu-footer-up p{
+				margin-bottom: 8px;
+			}
+
+			.menu-footer-up .policy{
+				font-size: 16px;
+				color: rgba(255,255,255,0.5);
+				text-decoration: underline;
+				display: inline-block;
+				margin-bottom: 21px;
+			}
+
+			.menu-phone, .menu-email{
+				font-size: 16px;
+				display: inline-block;
+			}
+			.menu-phone{
+				margin-right: 18px;
+			}
+
+			.menu-phone *[class^="icon-"], .menu-email *[class^="icon-"]{
+				margin-right: 12px;
+			}
+
+		.menu-footer .b-redder{
+			padding: 16px 0;
+		}
+
+			.menu-footer .b-redder p{
+				line-height: 12px;
+			}
+
+			.menu-footer .b-redder a{
+				width: 92px;
+				height: 16px;
+			}
+
 .b-mouse{
 	text-align: center;
 	width: 22px;
@@ -820,6 +901,7 @@ input{
 	}
 
 	.burger-menu {
+		margin-top: 14px;
 	    float: right;
 	    cursor: pointer;
 	}
@@ -852,13 +934,18 @@ input{
 			display: inline-block;
 		}
 
-		.b-menu-contacts .b-btn{
+		.b-menu-contacts .b-btn,
+		.b-screen-menu .b-btn{
 			padding: 7px 17px;
 			margin-top: 14px;
 		}
 
 .b-screen .b-btn{
 	margin-top: 44px;
+}
+
+.b-screen-menu .b-btn{
+	margin-top: 0;
 }
 
 .b-screen-head .b-table{
@@ -1574,7 +1661,7 @@ ul.b-breadcrumbs {
 
 @media screen and (max-width: 1200px){
 	
-	.b-menu.b-top-menu{
+	.b-menu.b-top-menu, .b-menu-contacts{
 		display: none;
 	}
 

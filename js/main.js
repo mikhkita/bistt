@@ -70,7 +70,7 @@ $(document).ready(function(){
         });
     }
 
-    var slideout = new Slideout({
+    /*var slideout = new Slideout({
         'panel': document.getElementById('panel-page'),
         'menu': document.getElementById('mobile-menu'),
         'side': 'right',
@@ -102,15 +102,22 @@ $(document).ready(function(){
             $("body").unbind("touchmove");
             $(".b-menu-overlay").hide();
         },100);
-    });
+    });*/
+
+    var mapView = false,
+        nowScroll = false,
+        tolerant = 0,
+        blockScroll = false,
+        scrollID,
+        blockHash = false;
+    var page = document.body;
+
+    if(!!window.location.hash){
+        blockHash = true;
+    }
 
     if($('.main-page').length){
-        var mapView = false,
-            nowScroll = false,
-            tolerant = 0,
-            blockScroll = false,
-            scrollID;
-        var page = document.body;
+        
         if (page.addEventListener) {
             if ('onwheel' in document) {
                 // IE9+, FF17+, Ch31+
@@ -130,7 +137,7 @@ $(document).ready(function(){
             e = e || window.event;
 
             console.log(tolerant , nowScroll);
-            if(!nowScroll && !blockScroll){
+            if(!nowScroll && !blockScroll && !$('.burger-menu').hasClass("open")){
                 var delta = e.deltaY || e.detail || e.wheelDelta;
                 tolerant += delta;
                 //console.log(tolerant, delta, nowScroll);
@@ -142,11 +149,18 @@ $(document).ready(function(){
                         blockScroll = false;
                     }, 100);
 
+                    var slideCount;
+                    if($('.b-screen-menu').length){
+                        slideCount = $('.b-screen').length - 1;
+                    }else{
+                        slideCount = $('.b-screen').length;
+                    }
+
                     if(tolerant < 0){
                         console.log("scroll-up");
 
                         var currentID = parseInt($('.current-slide').attr("data-id"));
-                        var prevID = currentID > 1 ? currentID - 1 : $('.b-screen').length;
+                        var prevID = currentID > 1 ? currentID - 1 : slideCount;
 
                         $('.b-screen[data-id="'+prevID+'"]').addClass("move-down current-slide")
                         $('.b-screen[data-id="'+currentID+'"]').addClass("scale-down").removeClass("current-slide");
@@ -156,7 +170,7 @@ $(document).ready(function(){
                         console.log("scroll-down");
 
                         var currentID = parseInt($('.current-slide').attr("data-id"));
-                        var nextID = currentID < $('.b-screen').length ? currentID + 1 : 1;
+                        var nextID = currentID < slideCount ? currentID + 1 : 1;
 
                         $('.b-screen[data-id="'+currentID+'"]').addClass("move-up").removeClass("current-slide");
                         $('.b-screen[data-id="'+nextID+'"]').addClass("scale-up current-slide");
@@ -272,6 +286,23 @@ $(document).ready(function(){
         return false;
     });
 
+    $('.burger-menu').click(function() {
+        if(!nowScroll && !blockHash){
+            nowScroll = true;
+            if(!$(this).hasClass("open")){
+                $('.current-slide').addClass("scale-down current-slide-menu").removeClass("current-slide");
+                $('.b-screen-menu').addClass("move-down current-slide");
+                $(this).addClass("open");
+                $('#slider-nav').addClass("hide");
+            }else{
+                $('.current-slide-menu').addClass("scale-up current-slide").removeClass("current-slide-menu");
+                $('.b-screen-menu').addClass("move-up").removeClass("current-slide");
+                $(this).removeClass("open");
+                $('#slider-nav').removeClass("hide");
+            }
+        }
+    });
+
     $(".b-popup[data-back]").each(function(){
         var $this = $(this),
             img = new Image(),
@@ -291,6 +322,7 @@ $(document).ready(function(){
             var hash = window.location.hash;
             var slideID = $('*[data-hash="'+hash+'"]').attr("data-id");
             $('#slider-nav a[data-id="'+slideID+'"]').click();
+            blockHash = false;
         }
     });
 

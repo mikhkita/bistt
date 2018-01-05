@@ -75,6 +75,14 @@ input{
 
 /*-----------------------*/
 
+.mobile-hide{
+	display: none;
+}
+
+.b-screen-menu .b-screen-back{
+	background-position: 3% 50%;
+}
+
 .b-requisites .b-btn-download {
     position: static;
     top: auto;
@@ -103,17 +111,69 @@ input{
     margin-right: 24px;
 }
 
+.dot-yellow{
+	width: 8px;
+	height: 8px;
+	margin-left: -4px;
+	margin-top: -4px;
+}
+
+.dot-white{
+	width: 6px;
+	height: 6px;
+	margin-left: -3px;
+	margin-top: -3px;
+}
+
+.dot-white-small{
+	width: 3px;
+	height: 3px;
+	margin-left: -1px;
+	margin-top: -1px;
+}
+
 @media screen and (max-width: 640px){
+
+	.b-geography-legend{
+		text-align: left;
+		margin-top: 35px;
+	}
 
 	.legend-item {
 		display: block;
-	    margin-bottom: 6px;
+	    margin-bottom: 12px;
 	    margin-right: 0;
+	}
+
+	.b-screen-about .b-screen-content p{
+		width: calc(100% - 34px);
+		font-size: 16px;
+		margin-top: 24px;
+	}
+
+	.b-screen .b-btn{
+		margin-top: 32px;
 	}
 
 }
 
 @media screen and (max-width: 580px){
+
+	h1.b-title{
+		font-size: 32px;
+		line-height: 36px;
+		margin-bottom: 24px;
+	}
+
+	h2.b-title{
+		font-size: 28px;
+		line-height: 36px;
+		margin-bottom: 6px;
+	}
+
+	.b-screen h4{
+		font-size: 20px;
+	}
 
 	.b-posts-item {
 	    width: 100%;
@@ -135,9 +195,20 @@ input{
 		margin-bottom: 0;
 	}
 
+	.b-screen-head .b-screen-content p{
+		width: 100%;
+		font-size: 16px;
+		line-height: 24px;
+	}
+
 }
 
 @media screen and (max-width: 475px){
+
+	.b-logo{
+		width: 230px;
+    	height: 51px;
+	}
 
 	.b-requisites-item{
 		padding-top: 12px;
@@ -159,6 +230,31 @@ input{
 
 	.b-popup h2.b-title{
 		padding-right: 40px;
+	}
+
+	.b-screen .b-table{
+		width: calc(100% - 34px);
+	}
+
+	.dot-yellow{
+		width: 5px;
+		height: 5px;
+		margin-left: -2px;
+		margin-top: -2px;
+	}
+
+	.dot-white{
+		width: 4px;
+		height: 4px;
+		margin-left: -2px;
+		margin-top: -2px;
+	}
+
+	.dot-white-small{
+		width: 2px;
+		height: 2px;
+		margin-left: -1px;
+		margin-top: -1px;
 	}
 
 }

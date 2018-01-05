@@ -85,6 +85,10 @@ input{
 
 @media screen and (max-width: 1024px){
 
+	.b-screen-menu .b-screen-back{
+		background-position: 3% 50%;
+	}
+
 	.b-requisites .b-btn-download {
 	    position: static;
 	    top: auto;
