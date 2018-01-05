@@ -674,7 +674,7 @@ input{
 	}
 
 	.b-screen-menu ul{
-		
+
 	}
 
 		.b-screen-menu ul li{
@@ -1667,6 +1667,10 @@ ul.b-breadcrumbs {
 
 	.burger-menu{
 		display: inline-block;
+	}
+
+	.b-tube{
+		display: none;
 	}
 
 	#slider-nav{

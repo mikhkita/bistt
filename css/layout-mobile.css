@@ -132,6 +132,39 @@ input{
 	margin-top: -1px;
 }
 
+.services-list {
+    margin-top: 34px;
+}
+
+.services-item{
+	width: calc(100%/2 - 18px);
+    margin-bottom: 24px;
+    margin-bottom: 24px;
+}
+
+.services-item:nth-child(2n){
+	margin-right: 0;
+}
+
+.services-item:last-child,
+.services-item:nth-last-child(2){
+	margin-bottom: 0;
+}
+
+.services-item:last-child{
+    margin-bottom: 0;
+}
+
+	.services-item img{
+		width: 72px;
+	}
+
+	.services-item p {
+	    font-size: 20px;
+	    line-height: 24px;
+	    margin-top: 12px;
+	}
+
 @media screen and (max-width: 640px){
 
 	.b-geography-legend{
@@ -147,7 +180,6 @@ input{
 
 	.b-screen-about .b-screen-content p{
 		width: calc(100% - 34px);
-		font-size: 16px;
 		margin-top: 24px;
 	}
 
@@ -195,10 +227,19 @@ input{
 		margin-bottom: 0;
 	}
 
+	.b-screen-head .b-screen-content{
+		padding-top: 0;
+	}
+
 	.b-screen-head .b-screen-content p{
 		width: 100%;
 		font-size: 16px;
 		line-height: 24px;
+		margin-top: 0;
+	}
+
+	.b-screen-about .b-screen-content p{
+		font-size: 16px;
 	}
 
 }
@@ -256,6 +297,42 @@ input{
 		margin-left: -1px;
 		margin-top: -1px;
 	}
+
+	.services-list {
+	    width: 100%;
+	    margin-top: 20px;
+	}
+
+	.services-item{
+		display: inline-block;
+	    width: 100%;
+	    margin-right: 0;
+	    margin-bottom: 24px;
+	}
+
+	.services-item:last-child,
+	.services-item:nth-last-child(2){
+		margin-bottom: 24px;
+	}
+
+	.services-item:last-child{
+	    margin-bottom: 0;
+	}
+
+		.services-item img{
+			display: inline-block;
+			width: 48px;
+			margin-right: 24px;
+		}
+
+		.services-item p {
+			width: calc(100% - 80px);
+	   	 	vertical-align: top;
+			display: inline-block;
+		    font-size: 20px;
+		    line-height: 26px;
+		    margin-top: 0;
+		}
 
 }
 
