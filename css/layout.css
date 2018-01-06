@@ -770,6 +770,10 @@ input{
 	}
 
 	.mobile-prev-slide .icon-mouse-arrow{
+		padding-right: 1px;
+	}
+
+	.mobile-prev-slide .icon-mouse-arrow{
 		-webkit-transform: rotate(180deg);
 		-moz-transform: rotate(180deg);
 		-ms-transform: rotate(180deg);

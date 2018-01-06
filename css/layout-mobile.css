@@ -165,6 +165,37 @@ input{
 	    margin-top: 12px;
 	}
 
+.b-map{
+	display: none;
+}
+
+.b-contacts-item{
+	float: none;
+	width: 100%;
+}
+
+.b-map-block {
+	float: none;
+    width: 100%;
+}
+
+.b-map-city{
+	width: 116%;
+}
+
+.b-map-city .b-btn-city {
+    margin-top: 32px;
+    margin-right: 0;
+    border: 0;
+    font-family: 'Merel-Regular';
+    padding: 5px 12px 9px;
+}
+
+.b-contacts-body{
+	font-size: 16px;
+	line-height: 24px;
+}
+
 @media screen and (max-width: 640px){
 
 	.b-geography-legend{
