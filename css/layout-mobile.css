@@ -202,24 +202,25 @@ input{
 .b-contacts-body{
 	font-size: 16px;
 	line-height: 24px;
+	margin-top: 26px;
+}
+
+.b-screen-about .b-screen-content p{
+	width: calc(100% - 34px);
+	margin-top: 16px;
 }
 
 @media screen and (max-width: 640px){
 
 	.b-geography-legend{
 		text-align: left;
-		margin-top: 35px;
+		margin-top: 37px;
 	}
 
 	.legend-item {
 		display: block;
-	    margin-bottom: 12px;
+	    margin-bottom: 14px;
 	    margin-right: 0;
-	}
-
-	.b-screen-about .b-screen-content p{
-		width: 100%;
-		margin-top: 16px;
 	}
 
 	.b-screen .b-btn{
@@ -239,12 +240,43 @@ input{
 	h2.b-title{
 		font-size: 28px;
 		line-height: 36px;
-		margin-bottom: 6px;
+		margin-bottom: 4px;
+	}
+
+	.b-screen-about .b-screen-content,
+	.b-screen-services .b-screen-content,
+	.b-screen-geography .b-screen-content,
+	.b-screen-contacts .b-screen-content{
+		padding-top: 12px;
+	}
+
+	.b-screen-head .b-screen-content{
+		padding-bottom: 12px;
+	}
+
+	.b-screen-head .b-screen-back{
+		background-position: 39% 0;
+    	background-size: auto 108%;
+	}
+	.b-screen-about .b-screen-back,
+	.b-screen-geography .b-screen-back{
+		background-position: 0% 15%;
+	}
+	.b-screen-services .b-screen-back{
+		background-position: 12% 15%;
+	}
+	.b-screen-contacts .b-screen-back{
+		background-position: 56% 15%;
+	}
+
+	.b-screen-geography h2.b-title{
+		margin-bottom: 21px;
 	}
 
 	.b-screen h4{
 		font-size: 18px;
 		line-height: 24px;
+		font-family: 'Merel-Regular';
 	}
 
 	.b-posts-item {
@@ -267,10 +299,6 @@ input{
 		margin-bottom: 0;
 	}
 
-	.b-screen-head .b-screen-content{
-		padding-top: 0;
-	}
-
 	.b-screen-head .b-screen-content p{
 		width: 100%;
 		font-size: 16px;
@@ -283,6 +311,15 @@ input{
 		line-height: 24px;
 	}
 
+	.b-screen-contacts h4{
+		font-size: 20px;
+		color: #fece0b;
+	}
+
+	.b-screen-contacts .b-btn{
+		margin-top: 28px;
+	}
+
 }
 
 @media screen and (max-width: 475px){
@@ -290,6 +327,10 @@ input{
 	.b-logo{
 		width: 230px;
     	height: 51px;
+	}
+
+	.main-page .b-block-menu{
+		padding-top: 24px;
 	}
 
 	.b-requisites-item{
@@ -316,6 +357,10 @@ input{
 
 	.b-screen .b-table{
 		width: calc(100% - 34px);
+	}
+
+	.b-screen-geography .b-table{
+		width: 100%;
 	}
 
 	.dot-yellow{
@@ -362,8 +407,8 @@ input{
 
 		.services-item img{
 			display: inline-block;
-			width: 48px;
-			margin-right: 24px;
+			width: 46px;
+			margin-right: 16px;
 		}
 
 		.services-item p {
@@ -375,9 +420,17 @@ input{
 		    margin-top: 0;
 		}
 
+	.b-screen-about .b-screen-content p{
+		width: 100%;
+	}
+
 }
 
 @media screen and (max-width: 385px){
+
+	.b-screen-geography h2.b-title{
+		text-align: left;
+	}
 
 	.b-popup .b-btn{
 		width: 100%;

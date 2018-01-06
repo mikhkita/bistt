@@ -658,6 +658,10 @@ input{
 
 }
 
+	.b-screen-menu .b-screen-content{
+		padding-top: 8px;
+	}
+
 	.mobile-menu-contacts{
 		position: absolute;
 		top: 96px;
@@ -705,7 +709,7 @@ input{
 				color: rgba(255,255,255,0.5);
 				text-decoration: underline;
 				display: inline-block;
-				margin-bottom: 16px;
+				margin-bottom: 18px;
 			}
 
 			.menu-phone, .menu-email{
@@ -720,12 +724,25 @@ input{
 				margin-right: 12px;
 			}
 
+			.menu-phone a, .menu-email a{
+				display: inline-block;
+				vertical-align: top;
+			}
+
+			.menu-phone a{
+				padding-top: 2px;
+			}
+
+			.menu-email a{
+				padding-top: 3px;
+			}
+
 		.b-screen.b-screen-menu .b-btn{
 			margin-top: 16px;
 		}
 
 		.menu-footer .b-redder{
-			padding: 14px 0 10px;
+			padding: 14px 0 8px;
 		}
 
 			.menu-footer .b-redder p{
@@ -756,7 +773,7 @@ input{
 	width: 43px;
 	height: 43px;
 	position: absolute;
-	left: calc(50% - 21px);
+	left: calc(50% - 22px);
 	bottom: 18px;
 	z-index: 10;
 }
@@ -775,7 +792,7 @@ input{
 		padding-right: 1px;
 	}
 
-	.mobile-prev-slide .icon-mouse-arrow{
+	.mobile-prev-slide{
 		-webkit-transform: rotate(180deg);
 		-moz-transform: rotate(180deg);
 		-ms-transform: rotate(180deg);
@@ -1549,7 +1566,7 @@ ul.b-breadcrumbs {
     left: calc(50% + 553px);
     position: fixed;
     z-index: 100;
-    margin-top: -94px;
+    margin-top: -92px;
     top: 50%;
 }
 

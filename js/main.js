@@ -178,7 +178,6 @@ $(document).ready(function(){
                         $('#slider-nav a[data-id="'+nextID+'"]').addClass("active");
                     }
                 }
-                window.location.hash = $(".current-slide").attr("data-hash");
             }else{
                 clearTimeout(scrollID);
                 scrollID = setTimeout(function(){
@@ -255,6 +254,8 @@ $(document).ready(function(){
             }, 725);
             mapView = true;
         }
+        window.location.hash = $(".current-slide").attr("data-hash");
+        //$("body").unbind("touchmove");
     }); 
 
     $('#slider-nav a').on('click', function(){
@@ -313,63 +314,26 @@ $(document).ready(function(){
         }
     });
 
-    /*var swipeh = new MobiSwipe("panel-page");
-    //swipeh.direction = swipeh.HORIZONTAL;
-    swipeh.onswipedown = function() {
-        $("body").bind("touchmove", function(e){
+    var swipeVertical = new MobiSwipe("panel-page");
+    swipeVertical.direction = swipeVertical.VERTICAL;
+    swipeVertical.onswipeup = function() {
+        /*$("body").bind("touchmove", function(e){
             e.preventDefault();
             return false;
-        });
-        console.log("swipeDown");
+        });*/
+        console.log("swipeUp");
+        var nextID = parseInt($('.current-slide').attr("data-id")) + 1;
+        $('#slider-nav a[data-id="'+nextID+'"]').click();
     };
-    swipeh.onswipeup = function() { 
-        $("body").bind("touchmove", function(e){
+    swipeVertical.onswipedown = function() {
+        /*$("body").bind("touchmove", function(e){
             e.preventDefault();
             return false;
-        });
-        console.log("swipeUp"); 
-    };*/
-
-    document.addEventListener('touchmove', function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-    }, false);
-
-    var initialPoint;
-    var finalPoint;
-    document.addEventListener('touchstart', function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        initialPoint=event.changedTouches[0];
-    }, false);
-    document.addEventListener('touchend', function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        finalPoint=event.changedTouches[0];
-        var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
-        var yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
-        if (xAbs > 20 || yAbs > 20) {
-            if (xAbs > yAbs) {
-                if (finalPoint.pageX < initialPoint.pageX){
-                /*СВАЙП ВЛЕВО*/}
-                else{
-                /*СВАЙП ВПРАВО*/}
-            }else {
-                if (finalPoint.pageY < initialPoint.pageY){
-                    /*СВАЙП ВВЕРХ*/
-                    console.log("UP");
-                    var nextID = parseInt($('.current-slide').attr("data-id")) + 1;
-                    $('#slider-nav a[data-id="'+nextID+'"]').click();
-                }
-                else{
-                    /*СВАЙП ВНИЗ*/
-                    console.log("DOWN");
-                    var prevID = parseInt($('.current-slide').attr("data-id")) - 1;
-                    $('#slider-nav a[data-id="'+prevID+'"]').click();
-                }
-            }
-        }
-    }, false);
+        });*/
+        console.log("swipeDown");
+        var prevID = parseInt($('.current-slide').attr("data-id")) - 1;
+        $('#slider-nav a[data-id="'+prevID+'"]').click();
+    };
 
     $(".b-popup[data-back]").each(function(){
         var $this = $(this),
