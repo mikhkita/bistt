@@ -322,8 +322,18 @@ $(document).ready(function(){
             return false;
         });*/
         console.log("swipeUp");
-        var nextID = parseInt($('.current-slide').attr("data-id")) + 1;
+        var slideCount;
+        if($('.b-screen-menu').length){
+            slideCount = $('.b-screen').length - 1;
+        }else{
+            slideCount = $('.b-screen').length;
+        }
+
+        var currentID = parseInt($('.current-slide').attr("data-id"));
+        var nextID = currentID < slideCount ? currentID + 1 : 1;
+
         $('#slider-nav a[data-id="'+nextID+'"]').click();
+
     };
     swipeVertical.onswipedown = function() {
         /*$("body").bind("touchmove", function(e){
@@ -331,7 +341,17 @@ $(document).ready(function(){
             return false;
         });*/
         console.log("swipeDown");
-        var prevID = parseInt($('.current-slide').attr("data-id")) - 1;
+
+        var slideCount;
+        if($('.b-screen-menu').length){
+            slideCount = $('.b-screen').length - 1;
+        }else{
+            slideCount = $('.b-screen').length;
+        }
+
+        var currentID = parseInt($('.current-slide').attr("data-id"));
+        var prevID = currentID > 1 ? currentID - 1 : slideCount;
+        
         $('#slider-nav a[data-id="'+prevID+'"]').click();
     };
 
