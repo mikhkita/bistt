@@ -660,26 +660,27 @@ input{
 
 	.mobile-menu-contacts{
 		position: absolute;
-		top: 105px;
+		top: 96px;
 	}
 
 	.b-screen-menu h2.b-title{
 		font-size: 28px;
 		line-height: 36px;
-		margin-bottom: 24px;
+		margin-bottom: 12px;
 	}
 
-	.b-screen-menu .b-table{
+	/*.b-screen-menu .b-table{
 		padding: 110px 0;
-	}
+	}*/
 
 	.b-screen-menu ul{
 
 	}
 
 		.b-screen-menu ul li{
+			font-size: 20px;
 			line-height: 26px;
-			margin-bottom: 16px;
+			margin-bottom: 12px;
 		}
 
 		.b-screen-menu ul li:last-child{
@@ -691,6 +692,7 @@ input{
 		position: absolute;
 		bottom: 0;
 		font-size: 16px;
+		line-height: 24px;
 		color: rgba(255,255,255,0.5);
 	}
 
@@ -698,16 +700,12 @@ input{
 			border-bottom: 2px solid rgba(151,151,151,0.3);
 		}
 
-			.menu-footer-up p{
-				margin-bottom: 8px;
-			}
-
 			.menu-footer-up .policy{
 				font-size: 16px;
 				color: rgba(255,255,255,0.5);
 				text-decoration: underline;
 				display: inline-block;
-				margin-bottom: 21px;
+				margin-bottom: 16px;
 			}
 
 			.menu-phone, .menu-email{
@@ -722,8 +720,12 @@ input{
 				margin-right: 12px;
 			}
 
+		.b-screen.b-screen-menu .b-btn{
+			margin-top: 16px;
+		}
+
 		.menu-footer .b-redder{
-			padding: 16px 0;
+			padding: 14px 0 10px;
 		}
 
 			.menu-footer .b-redder p{
@@ -755,7 +757,7 @@ input{
 	height: 43px;
 	position: absolute;
 	left: calc(50% - 21px);
-	bottom: 26px;
+	bottom: 18px;
 	z-index: 10;
 }
 

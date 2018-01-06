@@ -79,6 +79,14 @@ input{
 	display: none;
 }
 
+.b-screen-head .b-screen-content,
+.b-screen-about .b-screen-content,
+.b-screen-services .b-screen-content,
+.b-screen-geography .b-screen-content,
+.b-screen-contacts .b-screen-content{
+	padding-top: 0;
+}
+
 .b-screen-menu .b-screen-back{
 	background-position: 3% 50%;
 }
@@ -211,11 +219,11 @@ input{
 
 	.b-screen-about .b-screen-content p{
 		width: 100%;
-		margin-top: 24px;
+		margin-top: 16px;
 	}
 
 	.b-screen .b-btn{
-		margin-top: 32px;
+		margin-top: 24px;
 	}
 
 }
@@ -235,7 +243,8 @@ input{
 	}
 
 	.b-screen h4{
-		font-size: 20px;
+		font-size: 18px;
+		line-height: 24px;
 	}
 
 	.b-posts-item {
@@ -271,6 +280,7 @@ input{
 
 	.b-screen-about .b-screen-content p{
 		font-size: 16px;
+		line-height: 24px;
 	}
 
 }
@@ -331,19 +341,19 @@ input{
 
 	.services-list {
 	    width: 100%;
-	    margin-top: 20px;
+	    margin-top: 12px;
 	}
 
 	.services-item{
 		display: inline-block;
 	    width: 100%;
 	    margin-right: 0;
-	    margin-bottom: 24px;
+	    margin-bottom: 16px;
 	}
 
 	.services-item:last-child,
 	.services-item:nth-last-child(2){
-		margin-bottom: 24px;
+		margin-bottom: 16px;
 	}
 
 	.services-item:last-child{
@@ -360,8 +370,8 @@ input{
 			width: calc(100% - 80px);
 	   	 	vertical-align: top;
 			display: inline-block;
-		    font-size: 20px;
-		    line-height: 26px;
+		    font-size: 18px;
+		    line-height: 24px;
 		    margin-top: 0;
 		}
 

@@ -313,6 +313,64 @@ $(document).ready(function(){
         }
     });
 
+    /*var swipeh = new MobiSwipe("panel-page");
+    //swipeh.direction = swipeh.HORIZONTAL;
+    swipeh.onswipedown = function() {
+        $("body").bind("touchmove", function(e){
+            e.preventDefault();
+            return false;
+        });
+        console.log("swipeDown");
+    };
+    swipeh.onswipeup = function() { 
+        $("body").bind("touchmove", function(e){
+            e.preventDefault();
+            return false;
+        });
+        console.log("swipeUp"); 
+    };*/
+
+    document.addEventListener('touchmove', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+    }, false);
+
+    var initialPoint;
+    var finalPoint;
+    document.addEventListener('touchstart', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        initialPoint=event.changedTouches[0];
+    }, false);
+    document.addEventListener('touchend', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        finalPoint=event.changedTouches[0];
+        var xAbs = Math.abs(initialPoint.pageX - finalPoint.pageX);
+        var yAbs = Math.abs(initialPoint.pageY - finalPoint.pageY);
+        if (xAbs > 20 || yAbs > 20) {
+            if (xAbs > yAbs) {
+                if (finalPoint.pageX < initialPoint.pageX){
+                /*СВАЙП ВЛЕВО*/}
+                else{
+                /*СВАЙП ВПРАВО*/}
+            }else {
+                if (finalPoint.pageY < initialPoint.pageY){
+                    /*СВАЙП ВВЕРХ*/
+                    console.log("UP");
+                    var nextID = parseInt($('.current-slide').attr("data-id")) + 1;
+                    $('#slider-nav a[data-id="'+nextID+'"]').click();
+                }
+                else{
+                    /*СВАЙП ВНИЗ*/
+                    console.log("DOWN");
+                    var prevID = parseInt($('.current-slide').attr("data-id")) - 1;
+                    $('#slider-nav a[data-id="'+prevID+'"]').click();
+                }
+            }
+        }
+    }, false);
+
     $(".b-popup[data-back]").each(function(){
         var $this = $(this),
             img = new Image(),
@@ -334,20 +392,6 @@ $(document).ready(function(){
             $('#slider-nav a[data-id="'+slideID+'"]').click();
             blockHash = false;
         }
-
-        var myWidth, myHeight;
-         if( typeof( window.innerWidth ) == 'number' ) {
-            myWidth = window.innerWidth;
-            myHeight = window.innerHeight;
-        } else if( document.documentElement && ( document.documentElement.clientWidth || 
-        document.documentElement.clientHeight ) ) {
-            myWidth = document.documentElement.clientWidth;
-            myHeight = document.documentElement.clientHeight;
-        } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
-            myWidth = document.body.clientWidth;
-            myHeight = document.body.clientHeight;
-        }
-        alert("myWidth = "+myWidth+" /// myHeight = "+ myHeight);
     });
 
     var styles = [
