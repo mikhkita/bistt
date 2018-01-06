@@ -286,6 +286,16 @@ $(document).ready(function(){
         return false;
     });
 
+    $('.mobile-next-slide').on('click', function(){
+        var nextID = parseInt($(this).parent().attr("data-id")) + 1;
+        $('#slider-nav a[data-id="'+nextID+'"]').click();
+    });
+
+    $('.mobile-prev-slide').on('click', function(){
+        var prevID = parseInt($(this).parent().attr("data-id")) - 1;
+        $('#slider-nav a[data-id="'+prevID+'"]').click();
+    });
+    
     $('.burger-menu').click(function() {
         if(!nowScroll && !blockHash){
             nowScroll = true;
