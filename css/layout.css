@@ -717,11 +717,11 @@ input{
 				display: inline-block;
 			}
 			.menu-phone{
-				margin-right: 18px;
+				margin-right: 16px;
 			}
 
 			.menu-phone *[class^="icon-"], .menu-email *[class^="icon-"]{
-				margin-right: 12px;
+				margin-right: 10px;
 			}
 
 			.menu-phone a, .menu-email a{
