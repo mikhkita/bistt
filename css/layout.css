@@ -968,6 +968,9 @@ input{
 	}
 
 	.burger-menu {
+		position: relative;
+		width: 30px;
+		height: 26px;
 		margin-top: 14px;
 	    float: right;
 	    cursor: pointer;
@@ -976,6 +979,144 @@ input{
 	.burger-menu{
 		display: none;
 	}
+
+		.burger-menu div{
+			position: absolute;
+			width: 100%;
+			height: 2px;
+			background-color: #FFF;
+			border-radius: 1px;
+		}
+
+		.burger-top{
+			top: 0;
+		}
+
+		.burger-bottom{
+			bottom: 0;
+		}
+
+		.burger-up{
+			top: 8px;
+		}
+
+		.burger-down{
+			top: 16px;
+		}
+
+		@keyframes burger-up-move {
+			0% {
+				top: 8px;
+				left: 0;
+				width: 100%;
+			}
+			100%{
+				top: 12px;
+				left: 8px;
+				width: 14px;
+			}
+		}
+
+		@keyframes burger-up-rotate {
+			100%{
+				transform: rotate(45deg)
+			}
+		}
+
+		@keyframes burger-down-move {
+			0% {
+				top: 16px;
+				left: 0;
+				width: 100%;
+			}
+			100%{
+				top: 12px;
+				left: 8px;
+				width: 14px;
+			}
+		}
+
+		@keyframes burger-down-rotate {
+			100%{
+				transform: rotate(-45deg)
+			}
+		}
+
+		@keyframes burger-up-move-back {
+			0% {
+				top: 12px;
+				left: 8px;
+				width: 14px;
+			}
+			100%{
+				top: 8px;
+				left: 0;
+				width: 100%;
+			}
+		}
+
+		@keyframes burger-up-rotate-back {
+			0% {
+				transform: rotate(45deg)
+			}
+			100%{
+				transform: rotate(0)
+			}
+		}
+
+		@keyframes burger-down-move-back {
+			0% {
+				top: 12px;
+				left: 8px;
+				width: 14px;
+			}
+			100%{
+				top: 16px;
+				left: 0;
+				width: 100%;
+			}
+		}
+
+		@keyframes burger-down-rotate-back {
+			0% {
+				transform: rotate(-45deg)
+			}
+			100%{
+				transform: rotate(0)
+			}
+		}
+
+		.burger-menu.open .burger-up{
+			-webkit-animation: burger-up-move 150ms ease-in both, burger-up-rotate 150ms 150ms ease-out both;
+			   -moz-animation: burger-up-move 150ms ease-in both, burger-up-rotate 150ms 150ms ease-out both;
+			    -ms-animation: burger-up-move 150ms ease-in both, burger-up-rotate 150ms 150ms ease-out both;
+			   	 -o-animation: burger-up-move 150ms ease-in both, burger-up-rotate 150ms 150ms ease-out both;
+					animation: burger-up-move 150ms ease-in both, burger-up-rotate 150ms 150ms ease-out both;
+		}
+
+		.burger-menu.open .burger-down{
+			-webkit-animation: burger-down-move 150ms ease-in both, burger-down-rotate 150ms 150ms ease-out both;
+			   -moz-animation: burger-down-move 150ms ease-in both, burger-down-rotate 150ms 150ms ease-out both;
+			    -ms-animation: burger-down-move 150ms ease-in both, burger-down-rotate 150ms 150ms ease-out both;
+			   	 -o-animation: burger-down-move 150ms ease-in both, burger-down-rotate 150ms 150ms ease-out both;
+					animation: burger-down-move 150ms ease-in both, burger-down-rotate 150ms 150ms ease-out both;
+		}
+
+		.burger-menu.close .burger-up{
+			-webkit-animation: burger-up-rotate-back 150ms ease-in both, burger-up-move-back 150ms 150ms ease-out both;
+			   -moz-animation: burger-up-rotate-back 150ms ease-in both, burger-up-move-back 150ms 150ms ease-out both;
+			    -ms-animation: burger-up-rotate-back 150ms ease-in both, burger-up-move-back 150ms 150ms ease-out both;
+			   	 -o-animation: burger-up-rotate-back 150ms ease-in both, burger-up-move-back 150ms 150ms ease-out both;
+					animation: burger-up-rotate-back 150ms ease-in both, burger-up-move-back 150ms 150ms ease-out both;
+		}
+
+		.burger-menu.close .burger-down{
+			-webkit-animation: burger-down-rotate-back 150ms ease-in both, burger-down-move-back 150ms 150ms ease-out both;
+			   -moz-animation: burger-down-rotate-back 150ms ease-in both, burger-down-move-back 150ms 150ms ease-out both;
+			    -ms-animation: burger-down-rotate-back 150ms ease-in both, burger-down-move-back 150ms 150ms ease-out both;
+			   	 -o-animation: burger-down-rotate-back 150ms ease-in both, burger-down-move-back 150ms 150ms ease-out both;
+					animation: burger-down-rotate-back 150ms ease-in both, burger-down-move-back 150ms 150ms ease-out both;
+		}
 
 	.b-menu{
 		display: inline-block;
@@ -1630,35 +1771,7 @@ ul.b-breadcrumbs {
 				background-color: #FFF;
 			}
 
-			#slider-nav ul li:hover a span{
-			    width: 15px;
-			    height: 15px;
-				margin: 3px 0 0 8px;
-			    -webkit-transform: rotate(45deg);
-	   			-moz-transform: rotate(45deg);
-	    		-ms-transform: rotate(45deg);
-	    		-o-transform: rotate(45deg);
-	    		transform: rotate(45deg);
-	    		border: 1px solid #fece0b;
-			}
-
-			#slider-nav ul li:hover .screen-bubbles-item{
-				opacity: 1;
-				visibility: visible;
-				-webkit-transform: translateX(-10px);
-			    -moz-transform: translateX(-10px);
-			    -ms-transform: translateX(-10px);
-			    -o-transform: translateX(-10px);
-			    transform: translateX(-10px);
-			}
-
-			#slider-nav ul li:hover a.active span{
-			    width: 15px;
-			    height: 15px;
-				margin: 3px 0 0 8px;
-			    border-radius: 3px;
-	    		border: 1px solid transparent;
-			}
+			
 
 /*-------slideout.js-------*/
 
@@ -1758,4 +1871,45 @@ ul.b-breadcrumbs {
 		display: block;
 	}
 
+}
+
+@media screen and (min-width: 768px){
+	#slider-nav:not(.bubble-close) ul li:hover a span{
+	    width: 15px;
+	    height: 15px;
+		margin: 3px 0 0 8px;
+	    -webkit-transform: rotate(45deg);
+			-moz-transform: rotate(45deg);
+		-ms-transform: rotate(45deg);
+		-o-transform: rotate(45deg);
+		transform: rotate(45deg);
+		border: 1px solid #fece0b;
+	}
+
+	/*#slider-nav ul li:hover a span{
+
+	}*/
+
+	#slider-nav:not(.bubble-close) ul li:hover .screen-bubbles-item{
+		opacity: 1;
+		visibility: visible;
+		-webkit-transform: translateX(-10px);
+	    -moz-transform: translateX(-10px);
+	    -ms-transform: translateX(-10px);
+	    -o-transform: translateX(-10px);
+	    transform: translateX(-10px);
+	}
+
+	/*#slider-nav.bubble-close ul li:hover .screen-bubbles-item{
+		opacity: 0;
+		visibility: hidden;
+	}*/
+
+	#slider-nav:not(.bubble-close) ul li:hover a.active span{
+	    width: 15px;
+	    height: 15px;
+		margin: 3px 0 0 8px;
+	    border-radius: 3px;
+		border: 1px solid transparent;
+	}
 }

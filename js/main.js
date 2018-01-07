@@ -1,6 +1,9 @@
 $(document).ready(function(){
 
-    var isRetina = retina();
+    var isDesktop = false,
+    isTablet = false,
+    isMobile = false,
+    isRetina = retina();
 
     function resize(){
        if( typeof( window.innerWidth ) == 'number' ) {
@@ -13,6 +16,14 @@ $(document).ready(function(){
         } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
             myWidth = document.body.clientWidth;
             myHeight = document.body.clientHeight;
+        }
+
+        if( myWidth > 1199 ){
+            isDesktop = true;
+        }else if( myWidth > 767 ){
+            isTablet = true;
+        }else{
+            isMobile = true;
         }
     }
 
@@ -258,14 +269,30 @@ $(document).ready(function(){
             }, 725);
             mapView = true;
         }
-        window.location.hash = $(".current-slide").attr("data-hash");
+        if(!$(".current-slide").hasClass("b-screen-menu")){
+            window.location.hash = $(".current-slide").attr("data-hash");
+        }
         //$("body").unbind("touchmove");
     }); 
 
+    var bubbleTimer,
+        onswipe = false;
+
     $('#slider-nav a').on('click', function(){
+
         if(!nowScroll){
+
             nowScroll = true;
             tolerant = 0;
+            $this = $(this);
+
+            if(isMobile){
+                clearTimeout(bubbleTimer);
+                $("#slider-nav a").each(function(){
+                    $(this).removeClass("bubble-open");
+                });
+                $this.addClass("bubble-open");
+            }
 
             var currentID = parseInt($('.current-slide').attr("data-id"));
             var buttonID = parseInt($(this).attr("data-id"));
@@ -291,8 +318,16 @@ $(document).ready(function(){
                 }
             }
 
+            if(isMobile){
+                bubbleTimer = setTimeout(function() {
+                    $this.removeClass("bubble-open");
+                }, 1500);
+            }
+
             $('#slider-nav a.active').removeClass("active");
             $(this).addClass("active");
+
+            onswipe = false;
         }
     });
 
@@ -316,12 +351,12 @@ $(document).ready(function(){
             if(!$(this).hasClass("open")){
                 $('.current-slide').addClass("scale-down current-slide-menu").removeClass("current-slide");
                 $('.b-screen-menu').addClass("move-down current-slide");
-                $(this).addClass("open");
+                $(this).addClass("open").removeClass("close");
                 $('#slider-nav').addClass("hide");
             }else{
                 $('.current-slide-menu').addClass("scale-up current-slide").removeClass("current-slide-menu");
                 $('.b-screen-menu').addClass("move-up").removeClass("current-slide");
-                $(this).removeClass("open");
+                $(this).removeClass("open").addClass("close");
                 $('#slider-nav').removeClass("hide");
             }
         }
@@ -338,7 +373,10 @@ $(document).ready(function(){
         if(!$('.burger-menu').hasClass("open")){
             var currentID = parseInt($('.current-slide').attr("data-id"));
             var nextID = currentID < slideCount ? currentID + 1 : 1;
+            nowScroll = false;
+            onswipe = true;
             $('#slider-nav a[data-id="'+nextID+'"]').click();
+
         }
 
     };
@@ -350,6 +388,8 @@ $(document).ready(function(){
         if(!$('.burger-menu').hasClass("open")){
             var currentID = parseInt($('.current-slide').attr("data-id"));
             var prevID = currentID > 1 ? currentID - 1 : slideCount;
+            nowScroll = false;
+            onswipe = true;
             $('#slider-nav a[data-id="'+prevID+'"]').click();
         }
     };
