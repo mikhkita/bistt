@@ -1331,6 +1331,9 @@ input{
 		.b-contacts-info{
 			margin-bottom: 16px;
 		}
+		.b-contacts-info:last-child{
+			margin-bottom: 0;
+		}
 			.b-contacts-info p{
 				display: inline-block;
 			}
@@ -1368,7 +1371,10 @@ input{
 /*---------Контакты---------*/
 
 .b-header{
-	background-color: #444;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../i/back-inner.jpg);
 }
 
 	.b-header-title{
@@ -1448,6 +1454,10 @@ ul.b-breadcrumbs {
 	font-size: 28px;
 }
 
+.b-content .b-contacts .b-map-block{
+	width: calc(100% - 390px);
+}
+
 .b-content .b-map{
 	-webkit-box-shadow: 0px 8px 30px 4px rgba(200, 200, 200, 1);
 	-moz-box-shadow:    0px 8px 30px 4px rgba(200, 200, 200, 1);
@@ -1521,6 +1531,10 @@ ul.b-breadcrumbs {
 
 		.b-footer .b-menu{
 			float: right;
+		}
+
+		.b-footer .burger-menu{
+			display: none;
 		}
 
 			.b-footer-menu{
@@ -1860,6 +1874,17 @@ ul.b-breadcrumbs {
 
 }
 
+@media screen and (max-width: 940px){
+
+	.b-footer-menu{
+		display: none;
+	}
+	.b-footer .burger-menu{
+		display: block;
+	}
+
+}
+
 @media screen and (max-width: 768px){
 
 	.b-mouse{
@@ -1873,22 +1898,18 @@ ul.b-breadcrumbs {
 
 }
 
-@media screen and (min-width: 768px){
+@media screen and (min-width: 767px){
 	#slider-nav:not(.bubble-close) ul li:hover a span{
 	    width: 15px;
 	    height: 15px;
 		margin: 3px 0 0 8px;
 	    -webkit-transform: rotate(45deg);
-			-moz-transform: rotate(45deg);
+		-moz-transform: rotate(45deg);
 		-ms-transform: rotate(45deg);
 		-o-transform: rotate(45deg);
 		transform: rotate(45deg);
 		border: 1px solid #fece0b;
 	}
-
-	/*#slider-nav ul li:hover a span{
-
-	}*/
 
 	#slider-nav:not(.bubble-close) ul li:hover .screen-bubbles-item{
 		opacity: 1;
@@ -1899,11 +1920,6 @@ ul.b-breadcrumbs {
 	    -o-transform: translateX(-10px);
 	    transform: translateX(-10px);
 	}
-
-	/*#slider-nav.bubble-close ul li:hover .screen-bubbles-item{
-		opacity: 0;
-		visibility: hidden;
-	}*/
 
 	#slider-nav:not(.bubble-close) ul li:hover a.active span{
 	    width: 15px;

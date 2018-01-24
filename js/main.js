@@ -427,9 +427,11 @@ $(document).ready(function(){
         }
     });
 
-    $(function() {
-        FastClick.attach(document.body);
-    });
+    if(isMobile){
+        $(function() {
+            FastClick.attach(document.body);
+        });
+    }
 
     var styles = [
         {

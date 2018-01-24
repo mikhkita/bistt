@@ -104,4 +104,19 @@ input{
 		margin-left: 3%;
 	}
 
+	.b-footer-menu li a {
+	    padding: 0 10px;
+	}
+
+}
+
+@media screen and (max-width: 940px){
+
+	.b-map-city .b-btn-city {
+	    margin-right: 20px;
+	}
+	.b-map{
+		height: 250px;
+	}
+
 }
