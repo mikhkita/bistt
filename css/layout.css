@@ -1616,6 +1616,9 @@ ul.b-breadcrumbs {
 	    background-position: 50% 50%;
 	    background-repeat: no-repeat;
 	    background-size: cover;
+	    -webkit-box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+		-moz-box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
+		box-shadow: 0 20px 35px rgba(0, 0, 0, 0.2);
 	}
 	.b-services-item:nth-child(4n){
 		margin-right: 0;
