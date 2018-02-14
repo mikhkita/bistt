@@ -1533,13 +1533,14 @@ ul.b-breadcrumbs {
 		padding: 32px 0;
 	}
 
-		.b-footer .b-menu{
-			float: right;
-		}
-
 		.b-footer .burger-menu{
 			display: none;
 		}
+			.b-footer-menu-cont{
+				display: inline-block;
+				vertical-align: top;
+				float: right;
+			}
 
 			.b-footer-menu{
 				margin-left: 0;
