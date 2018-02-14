@@ -1118,6 +1118,10 @@ input{
 					animation: burger-down-rotate-back 150ms ease-in both, burger-down-move-back 150ms 150ms ease-out both;
 		}
 
+	.b-menu-cont{
+		display: inline-block;
+		vertical-align: top;
+	}
 	.b-menu{
 		display: inline-block;
 		vertical-align: top;
