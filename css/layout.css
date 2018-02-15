@@ -689,6 +689,7 @@ input{
 		font-size: 28px;
 		line-height: 36px;
 		margin-bottom: 12px;
+		color: #FFF;
 	}
 
 	/*.b-screen-menu .b-table{
@@ -1393,6 +1394,7 @@ input{
 /*---------Контакты---------*/
 
 .b-header{
+	padding-top: 85px;
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -1599,6 +1601,28 @@ ul.b-breadcrumbs {
 				    height: 21px;
 				    font-size: 0px;
 				}
+
+/*------Мобильное меню на внутренних страницах------*/
+
+.b-header .b-screen-menu{
+	position: fixed;
+}
+
+.b-header .b-block-menu{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+}
+
+.b-header .b-block-menu.fixed{
+	position: fixed;
+}
+
+.no-scroll{
+	height: 100%;
+	overflow: hidden;
+}
 
 /*------Услуги------*/
 
