@@ -132,6 +132,10 @@ input{
 	    padding: 0 10px;
 	}
 
+	.b-text-center{
+		width: 100%;
+	}
+
 }
 
 @media screen and (max-width: 940px){

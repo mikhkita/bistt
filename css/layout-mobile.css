@@ -263,6 +263,10 @@ input{
 	font-size: 18px;
 }
 
+.b-text-center{
+	width: 100%;
+}
+
 .b-services-item{
 	width: calc(100%/2 - 12px);
 	margin-right: 24px;
