@@ -297,7 +297,7 @@ h4{
     vertical-align: middle;
 }
 
-input{
+.wrap-input input{
 	padding: 15px 24px;
 	border: 1px solid #ffffff;
 	border-radius: 3px;
