@@ -174,7 +174,12 @@ ul.b-breadcrumbs li:after{
 	font-size: 16px;
 	line-height: 20px;
 }
-
+	.b-btn:hover{
+		background-color: rgba(254, 206, 11, 0.2);
+	}
+	.b-btn:active{
+		background-color: rgba(254, 206, 11, 0.4);
+	}
 .b-content .b-btn{
 	color: #3b3636;
 }
@@ -297,8 +302,8 @@ h4{
     vertical-align: middle;
 }
 
-.wrap-input input{
-	padding: 15px 24px;
+input{
+	padding: 13px 24px 17px;
 	border: 1px solid #ffffff;
 	border-radius: 3px;
 	background-color: transparent;
@@ -401,6 +406,7 @@ h4{
 .main-page h3.b-title,
 .main-page h4{
 	color: #FFF;
+	font-family: "Merel-Regular";
 }
 
 #panel-page{
@@ -750,8 +756,10 @@ h4{
 	}
 
 	.mobile-menu-contacts{
-		position: absolute;
-		top: 96px;
+		position: relative;
+		top: 0px;
+		width: calc( 100vw - 38px );
+		margin-bottom: 16px;
 	}
 
 	.b-screen-menu h2.b-title{
@@ -782,7 +790,7 @@ h4{
 	.menu-footer{
 		width: 100%;
 		position: absolute;
-		bottom: 0;
+		bottom: 10px;
 		font-size: 16px;
 		line-height: 24px;
 		color: rgba(255,255,255,0.5);
@@ -1224,6 +1232,10 @@ h4{
 				padding: 0 16px;
 				font-size: 16px;
 			}
+			.b-menu li a:hover,
+			.b-menu li a.active{
+				color: #fece0b;
+			}
 
 	.b-menu-contacts{
 		font-family: 'Geometria-Medium';
@@ -1348,13 +1360,14 @@ h4{
 	.services-item{
 		display: inline-block;
 		vertical-align: top;
-	    width: calc(100%/3 - 22px);
+		width: calc(100%/3 - 22px);
 		margin-right: 24px;
 	}
 
 	.services-item:last-child{
 		margin-right: 0;
 	}
+
 		.services-item img{
 			padding-bottom: 20px;
 		}
@@ -1377,6 +1390,7 @@ h4{
 		.services-item a:hover{
 			text-decoration: none;
 		}
+
 .b-screen-geography h2{
 	text-align: center;
 }
@@ -1463,7 +1477,7 @@ h4{
     font-size: 0px;
     width: 0;
     height: 0;
-    right: 23px;
+    right: 50%;
     top: 18px;
     border: 12px solid transparent;
     border-top: 12px solid #FFF;
@@ -1566,9 +1580,13 @@ h4{
 		border: 1px solid #fece0b;
 		margin-top: 20px;
 	}
+		.b-map-city .b-btn-city:hover{
+			background: transparent;
+			border: 1px solid rgba(254, 206, 11, 0.4);
+		}
 
 	.b-map-city .b-btn-city.active{
-		border: 1px solid #fff;
+		border: 1px solid #FFF;
 	}
 
 	.b-map-city .b-btn-city:last-child{
@@ -1719,7 +1737,7 @@ ul.b-breadcrumbs {
 	}
 
 		.b-requisites-item{
-			border-bottom: 1px solid #979797;
+			border-bottom: 1px solid #efefef;
 			padding: 15px 0;
 		}
 		.b-requisites-item:last-child{
@@ -1795,6 +1813,9 @@ ul.b-breadcrumbs {
 				    width: 120px;
 				    height: 21px;
 				    font-size: 0px;
+				}
+				.b-redder a:hover{
+					opacity: 1;
 				}
 
 /*------Мобильное меню на внутренних страницах------*/
@@ -1938,6 +1959,7 @@ ul.b-breadcrumbs {
 		width: 33%;
 		color: #3b3636;
 	}
+
 	.b-popup form{
 		margin: 16px 0;
 	}
@@ -1958,13 +1980,6 @@ ul.b-breadcrumbs {
 
 			.b-popup form .wrap-input input{
 				width: 100%;
-			    padding: 15px 24px;
-			    border: 1px solid #ffffff;
-			    border-radius: 3px;
-			    background-color: transparent;
-			    color: #FFF;
-			    font-family: 'Merel-Regular';
-			    font-size: 16px;
 			}
 
 	.b-popup .b-btn{
