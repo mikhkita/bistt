@@ -534,7 +534,7 @@ $(document).ready(function(){
             position: this.myPlace,
             map: this.map,
             icon: {
-                url: "i/pin.svg",
+                url: "/bitrix/templates/main/html/i/pin.svg",
                 scaledSize: new google.maps.Size(40, 58), // scaled size
                 origin: new google.maps.Point(0,0), // origin
                 anchor: new google.maps.Point(23,50), // anchor
