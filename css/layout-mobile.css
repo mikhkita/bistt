@@ -79,6 +79,9 @@ input{
 	display: none;
 }
 
+#requisites-popup{
+	display: none;
+}
 .b-screen-head .b-screen-content,
 .b-screen-about .b-screen-content,
 .b-screen-services .b-screen-content,
@@ -290,6 +293,11 @@ input{
 
 @media screen and (max-width: 640px){
 
+	.dot-yellow p {
+	    font-size: 12px;
+	    margin-top: -9px;
+	    margin-left: 9px;
+	}
 	.b-geography-legend{
 		text-align: left;
 		margin-top: 37px;
@@ -508,6 +516,12 @@ input{
 	    width: 100%;
 	    margin-right: 0;
 	    margin-bottom: 16px;
+	}
+	.services-item h3{
+		display: inline;
+	}
+	.services-item img{
+		padding-bottom: 0;
 	}
 
 	.services-item:last-child,
