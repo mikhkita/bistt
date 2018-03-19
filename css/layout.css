@@ -1244,6 +1244,7 @@ input{
 	}	
 		.b-menu-contacts.right div{
 			position: relative;
+			padding-bottom: 14px;
 		}
 		.b-menu-contacts.right ul{
 			width: 189px;
@@ -1304,7 +1305,10 @@ input{
 			display: inline-block;
 		}
 
-		.b-menu-contacts .b-btn,
+		.b-menu-contacts .b-btn{
+			padding: 7px 17px;
+		}
+		
 		.b-screen-menu .b-btn{
 			padding: 7px 17px;
 			margin-top: 14px;
@@ -1442,9 +1446,15 @@ input{
     background-color: white;
     display: inline;
     position: absolute;
-    bottom: 16px;
+    bottom: 7px;
     left: 50%;
     visibility: hidden;
+
+	-webkit-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    -moz-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    -ms-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    -o-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
 
     -webkit-transform: translateX(-50%);
        -moz-transform: translateX(-50%);
@@ -1452,12 +1462,6 @@ input{
          -o-transform: translateX(-50%);
     	    transform: translateX(-50%);
 
-	-webkit-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
-    -moz-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
-    -ms-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
-    -o-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
-    transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
-	
 }
 .dot-white:hover {
 	z-index: 999;
@@ -1468,11 +1472,11 @@ input{
 	visibility: visible;
 
 
-/*    -webkit-transform: translateY(-50%);
-       -moz-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-         -o-transform: translateY(-50%);
-            transform: translateY(-50%);*/
+    -webkit-transform: translateY(-10px) translateX(-50%);
+       -moz-transform: translateY(-10px) translateX(-50%);
+        -ms-transform: translateY(-10px) translateX(-50%);
+         -o-transform: translateY(-10px) translateX(-50%);
+            transform: translateY(-10px) translateX(-50%);
    
 
 }
@@ -1594,12 +1598,14 @@ input{
 		margin-top: 20px;
 	}
 		.b-map-city .b-btn-city:hover{
-			background: transparent;
+			background-color: rgba(254, 206, 11, 0.2);
 			border: 1px solid rgba(254, 206, 11, 0.4);
 		}
 
 	.b-map-city .b-btn-city.active{
+		background: transparent;
 		border: 1px solid #FFF;
+		opacity: 0.7;
 	}
 
 	.b-map-city .b-btn-city:last-child{
@@ -1930,7 +1936,7 @@ ul.b-breadcrumbs {
 .b-popup{
     width: calc(100% - 48px);
     max-width: 1000px;
-    padding: 40px 50px 28px;
+    padding: 40px 100px 28px;
 	border-radius: 3px;
 	-webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 	-moz-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
@@ -1961,6 +1967,7 @@ ul.b-breadcrumbs {
 	}
 	.b-popup td{
 	    padding: 7px 14px;
+	    line-height: 20px;
 	}
 	.b-popup tr{
 		border-bottom:1px solid black;
@@ -1997,7 +2004,6 @@ ul.b-breadcrumbs {
 
 	.b-popup .b-btn{
 		float: right;
-		width: calc(50% - 12px);
 		min-width: 180px;
 		padding: 16px 24px 14px;
 		margin-top: 32px;
