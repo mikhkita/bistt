@@ -1258,7 +1258,7 @@ input{
 		    background-color: white;
 		    display: inline;
 		    position: absolute;
-            top: 23;
+            top: 23px;
     		left: 0;
 		    visibility: hidden;
 			-webkit-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
@@ -1471,7 +1471,6 @@ input{
 	display: block;
 	visibility: visible;
 
-
     -webkit-transform: translateY(-10px) translateX(-50%);
        -moz-transform: translateY(-10px) translateX(-50%);
         -ms-transform: translateY(-10px) translateX(-50%);
@@ -1599,10 +1598,10 @@ input{
 	}
 		.b-map-city .b-btn-city:hover{
 			background-color: rgba(254, 206, 11, 0.2);
-			border: 1px solid rgba(254, 206, 11, 0.4);
 		}
 
 	.b-map-city .b-btn-city.active{
+		cursor: default;
 		background: transparent;
 		border: 1px solid #FFF;
 		opacity: 0.7;
@@ -1935,7 +1934,7 @@ ul.b-breadcrumbs {
 
 .b-popup{
     width: calc(100% - 48px);
-    max-width: 1000px;
+    max-width: 900px;
     padding: 40px 100px 28px;
 	border-radius: 3px;
 	-webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
@@ -1953,6 +1952,7 @@ ul.b-breadcrumbs {
 	}
 
 	.b-popup h4{
+		max-width: 500px;
 		font-family: 'Merel-regular';
 		font-size: 16px;
 		line-height: 26px;
