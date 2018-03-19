@@ -350,7 +350,8 @@ $(document).ready(function(){
             }
 
             $('#slider-nav a.active').removeClass("active");
-            $(this).addClass("active");
+            console.log(buttonID);
+            $('#slider-nav a[data-id="'+buttonID+'"]').addClass("active");
 
             openBubble = true;
         }

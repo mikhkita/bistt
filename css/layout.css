@@ -2089,7 +2089,7 @@ ul.b-breadcrumbs {
 /*----------slider-styles-----------*/
 
 
-#slider-nav{
+div#slider-nav{
 	right: auto;
     left: calc(50% + 553px);
     position: fixed;
@@ -2098,12 +2098,12 @@ ul.b-breadcrumbs {
     top: 50%;
 }
 
-	#slider-nav ul{
+	div#slider-nav ul{
 		/*margin-right: -10px;*/
 		float: right;
 	}
 
-		#slider-nav ul li{
+		div#slider-nav ul li{
 			display: block;
 			position: relative;
 			width: 31px;
@@ -2112,11 +2112,11 @@ ul.b-breadcrumbs {
 			margin-bottom: 8px;
 		}
 
-		#slider-nav ul li:last-child{
+		div#slider-nav ul li:last-child{
 			margin-bottom: 0;
 		}
 
-		#slider-nav ul li a{
+		div#slider-nav ul li a{
 			display: block;
 		    position: relative;
 		    z-index: 1;
@@ -2126,7 +2126,7 @@ ul.b-breadcrumbs {
 		    text-decoration: none;
 		}
 
-			#slider-nav ul li a span{
+			div#slider-nav ul li a span{
 				vertical-align: middle;
 			    display: inline-block;
 				margin: 3px 0 0 8px;
@@ -2144,7 +2144,7 @@ ul.b-breadcrumbs {
 			    transition: all 0.15s ease-in-out;
 			}
 
-			#slider-nav ul li a.active span{
+			div#slider-nav ul li a.active span{
 				width: 15px;
 				height: 15px;
 				margin: 3px 0 0 8px;
