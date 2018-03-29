@@ -168,52 +168,53 @@ $(document).ready(function(){
         }
 
         function onWheel(e) {
-            e = e || window.event;
+            if(!$(".fancybox-slide #b-popup-call").length){
+                e = e || window.event;
+                console.log(tolerant , nowScroll);
+                if(!nowScroll && !blockScroll && !$('.burger-menu').hasClass("open")){
+                    var delta = e.deltaY || e.detail || e.wheelDelta;
+                    tolerant += delta;
+                    //console.log(tolerant, delta, nowScroll);
 
-            console.log(tolerant , nowScroll);
-            if(!nowScroll && !blockScroll && !$('.burger-menu').hasClass("open")){
-                var delta = e.deltaY || e.detail || e.wheelDelta;
-                tolerant += delta;
-                //console.log(tolerant, delta, nowScroll);
+                    if(Math.abs(tolerant) > 20){
+                        nowScroll = true;
+                        blockScroll = true;
+                        scrollID = setTimeout(function(){
+                            blockScroll = false;
+                        }, 100);
 
-                if(Math.abs(tolerant) > 20){
-                    nowScroll = true;
-                    blockScroll = true;
+                        if(tolerant < 0){
+                            console.log("scroll-up");
+
+                            var currentID = parseInt($('.current-slide').attr("data-id"));
+                            var prevID = currentID > 1 ? currentID - 1 : slideCount;
+
+                            $('.b-screen[data-id="'+prevID+'"]').addClass("move-down current-slide")
+                            $('.b-screen[data-id="'+currentID+'"]').addClass("scale-down").removeClass("current-slide");
+                            $('#slider-nav a.active').removeClass("active");
+                            $('#slider-nav a[data-id="'+prevID+'"]').addClass("active");
+                        }else{
+                            console.log("scroll-down");
+
+                            var currentID = parseInt($('.current-slide').attr("data-id"));
+                            var nextID = currentID < slideCount ? currentID + 1 : 1;
+
+                            $('.b-screen[data-id="'+currentID+'"]').addClass("move-up").removeClass("current-slide");
+                            $('.b-screen[data-id="'+nextID+'"]').addClass("scale-up current-slide");
+                            $('#slider-nav a.active').removeClass("active");
+                            $('#slider-nav a[data-id="'+nextID+'"]').addClass("active");
+                        }
+                    }
+                }else{
+                    clearTimeout(scrollID);
                     scrollID = setTimeout(function(){
                         blockScroll = false;
                     }, 100);
-
-                    if(tolerant < 0){
-                        console.log("scroll-up");
-
-                        var currentID = parseInt($('.current-slide').attr("data-id"));
-                        var prevID = currentID > 1 ? currentID - 1 : slideCount;
-
-                        $('.b-screen[data-id="'+prevID+'"]').addClass("move-down current-slide")
-                        $('.b-screen[data-id="'+currentID+'"]').addClass("scale-down").removeClass("current-slide");
-                        $('#slider-nav a.active').removeClass("active");
-                        $('#slider-nav a[data-id="'+prevID+'"]').addClass("active");
-                    }else{
-                        console.log("scroll-down");
-
-                        var currentID = parseInt($('.current-slide').attr("data-id"));
-                        var nextID = currentID < slideCount ? currentID + 1 : 1;
-
-                        $('.b-screen[data-id="'+currentID+'"]').addClass("move-up").removeClass("current-slide");
-                        $('.b-screen[data-id="'+nextID+'"]').addClass("scale-up current-slide");
-                        $('#slider-nav a.active').removeClass("active");
-                        $('#slider-nav a[data-id="'+nextID+'"]').addClass("active");
-                    }
+                    tolerant = 0;
                 }
-            }else{
-                clearTimeout(scrollID);
-                scrollID = setTimeout(function(){
-                    blockScroll = false;
-                }, 100);
-                tolerant = 0;
-            }
 
-            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+                e.preventDefault ? e.preventDefault() : (e.returnValue = false);
+            }
         }
         $('.b-logo').on('click', function(){
             if(!$('.burger-menu').hasClass("open")){
