@@ -174,7 +174,12 @@ ul.b-breadcrumbs li:after{
 	font-size: 16px;
 	line-height: 20px;
 }
-
+	.b-btn:hover{
+		background-color: rgba(254, 206, 11, 0.2);
+	}
+	.b-btn:active{
+		background-color: rgba(254, 206, 11, 0.4);
+	}
 .b-content .b-btn{
 	color: #3b3636;
 }
@@ -297,8 +302,8 @@ h4{
     vertical-align: middle;
 }
 
-.wrap-input input{
-	padding: 15px 24px;
+input{
+	padding: 13px 24px 17px;
 	border: 1px solid #ffffff;
 	border-radius: 3px;
 	background-color: transparent;
@@ -401,6 +406,7 @@ h4{
 .main-page h3.b-title,
 .main-page h4{
 	color: #FFF;
+	font-family: "Merel-Regular";
 }
 
 #panel-page{
@@ -750,8 +756,10 @@ h4{
 	}
 
 	.mobile-menu-contacts{
-		position: absolute;
-		top: 96px;
+		position: relative;
+		top: 0px;
+		width: calc( 100vw - 38px );
+		margin-bottom: 16px;
 	}
 
 	.b-screen-menu h2.b-title{
@@ -782,7 +790,7 @@ h4{
 	.menu-footer{
 		width: 100%;
 		position: absolute;
-		bottom: 0;
+		bottom: 10px;
 		font-size: 16px;
 		line-height: 24px;
 		color: rgba(255,255,255,0.5);
@@ -1224,17 +1232,83 @@ h4{
 				padding: 0 16px;
 				font-size: 16px;
 			}
+			.b-menu li a:hover,
+			.b-menu li a.active{
+				color: #fece0b;
+			}
 
 	.b-menu-contacts{
 		font-family: 'Geometria-Medium';
 		font-size: 16px;
 		text-align: right;
-	}
+	}	
+		.b-menu-contacts.right div{
+			position: relative;
+			padding-bottom: 14px;
+		}
+		.b-menu-contacts.right ul{
+			width: 189px;
+			text-align: left;
+			font-size: 18px;
+			font-family: Merel-Regular;
+			line-height: 26px;
+			opacity: 0;
+		    border-radius: 3px;
+		    padding:12px 23px 12px 16px;
+		    background-color: white;
+		    display: inline;
+		    position: absolute;
+            top: 23px;
+    		left: 0;
+		    visibility: hidden;
+			-webkit-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+		    -moz-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+		    -ms-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+		    -o-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+		    transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;	
+		}
+		.b-menu-contacts.right ul:after{
+			position: absolute;
+			content: "s";
+			font-size: 0px;
+			width: 0;
+			height: 0;
+	        right: 82px;
+   			top: -23px;
+			border: 12px solid transparent;
+			border-bottom: 12px solid #FFF;
+		}
+		.b-menu-contacts.right div:hover ul:after{
+			-webkit-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+			-moz-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+			-ms-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+			-o-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+			transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+		}
+		.b-menu-contacts.right ul a{
+			color: #554e4e;
+		}
+		.b-menu-contacts.right div:hover ul{
+			opacity: 1;
+			display: block;
+			visibility: visible;
+		    -webkit-transform: translateY(25px);
+		    -moz-transform: translateY(25px);
+		    -ms-transform: translateY(25px);
+		    -o-transform: translateY(25px);
+		    transform: translateY(25px);
+		}	 
+		.b-menu-contacts.right span{
+			font-size: 12px;
+		}
 		.b-menu-contacts a{
 			display: inline-block;
 		}
 
-		.b-menu-contacts .b-btn,
+		.b-menu-contacts .b-btn{
+			padding: 7px 17px;
+		}
+		
 		.b-screen-menu .b-btn{
 			padding: 7px 17px;
 			margin-top: 14px;
@@ -1290,7 +1364,7 @@ h4{
 	.services-item{
 		display: inline-block;
 		vertical-align: top;
-		width: calc(100%/4 - 22px);
+		width: calc(100%/3 - 22px);
 		margin-right: 24px;
 	}
 
@@ -1298,10 +1372,27 @@ h4{
 		margin-right: 0;
 	}
 
+		.services-item img{
+			padding-bottom: 20px;
+		}
 		.services-item p{
 			font-size: 22px;
 			line-height: 28px;
 			margin-top: 34px;
+		}
+		.services-item h3{
+			font-family: Merel-Medium;
+			line-height: 28px;
+			font-size: 32px;
+			padding-bottom: 17px;
+		}
+		.services-item a{
+			text-decoration: underline;
+			line-height: 28px;
+			font-size: 18px;
+		}
+		.services-item a:hover{
+			text-decoration: none;
 		}
 
 .b-screen-geography h2{
@@ -1332,6 +1423,10 @@ h4{
 	margin-left: -6px;
 	margin-top: -6px;
 }
+.dot-yellow p{
+	margin-top: -4px;
+    margin-left: 23px;
+}
 
 .dot-white{
 	position: absolute;
@@ -1341,6 +1436,67 @@ h4{
 	background-color: #FFF;
 	margin-left: -4px;
 	margin-top: -4px;
+}
+.dot-white p{
+	opacity: 0;
+	font-size: 14px; 
+    color: black;
+    border-radius: 3px;
+    padding: 2px 12px 5px;
+    background-color: white;
+    display: inline;
+    position: absolute;
+    bottom: 7px;
+    left: 50%;
+    visibility: hidden;
+
+	-webkit-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    -moz-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    -ms-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    -o-transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+    transition: transform 300ms ease-out, visibility 300ms ease-out, opacity 300ms ease-out;
+
+    -webkit-transform: translateX(-50%);
+       -moz-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+         -o-transform: translateX(-50%);
+    	    transform: translateX(-50%);
+
+}
+.dot-white:hover {
+	z-index: 999;
+}
+.dot-white:hover p{
+	opacity: 1;
+	display: block;
+	visibility: visible;
+
+    -webkit-transform: translateY(-10px) translateX(-50%);
+       -moz-transform: translateY(-10px) translateX(-50%);
+        -ms-transform: translateY(-10px) translateX(-50%);
+         -o-transform: translateY(-10px) translateX(-50%);
+            transform: translateY(-10px) translateX(-50%);
+   
+
+}
+.dot-white:hover p:after{
+
+}
+.dot-white p:after{
+    position: absolute;
+    content: "s";
+    font-size: 0px;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 18px;
+    border: 12px solid transparent;
+    border-top: 12px solid #FFF;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
 }
 
 .dot-white-small{
@@ -1437,12 +1593,18 @@ h4{
 	.b-map-city .b-btn-city{
 		padding: 8px 18px;
 		margin-right: 24px;
-		border: 1px solid #FFF;
+		border: 1px solid #fece0b;
 		margin-top: 20px;
 	}
+		.b-map-city .b-btn-city:hover{
+			background-color: rgba(254, 206, 11, 0.2);
+		}
 
 	.b-map-city .b-btn-city.active{
-		border: 1px solid #fece0b;
+		cursor: default;
+		background: transparent;
+		border: 1px solid #FFF;
+		opacity: 0.7;
 	}
 
 	.b-map-city .b-btn-city:last-child{
@@ -1593,7 +1755,7 @@ ul.b-breadcrumbs {
 	}
 
 		.b-requisites-item{
-			border-bottom: 1px solid #979797;
+			border-bottom: 1px solid #efefef;
 			padding: 15px 0;
 		}
 		.b-requisites-item:last-child{
@@ -1669,6 +1831,9 @@ ul.b-breadcrumbs {
 				    width: 120px;
 				    height: 21px;
 				    font-size: 0px;
+				}
+				.b-redder a:hover{
+					opacity: 1;
 				}
 
 /*------Мобильное меню на внутренних страницах------*/
@@ -1768,9 +1933,9 @@ ul.b-breadcrumbs {
 /*-----------Popup-----------*/
 
 .b-popup{
-	width: calc(100% - 48px);
-	max-width: 500px;
-	padding: 40px 44px 28px;
+    width: calc(100% - 48px);
+    max-width: 900px;
+    padding: 40px 100px 28px;
 	border-radius: 3px;
 	-webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
 	-moz-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
@@ -1778,20 +1943,41 @@ ul.b-breadcrumbs {
 	background-position: 50% 50%;
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-color: #3d3938;
 }
 
 	.b-popup h2.b-title{
 		font-size: 36px;
 		line-height: 44px;
-		color: #FFF;
 		margin-bottom: 16px;
 	}
 
 	.b-popup h4{
+		max-width: 500px;
+		font-family: 'Merel-regular';
 		font-size: 16px;
 		line-height: 26px;
-		color: #FFF;
+	}
+	.b-popup table{
+		color: black;
+		border:1px solid black;
+	}
+	.b-popup th{
+		text-align: center;
+    	padding: 7px 14px;
+	}
+	.b-popup td{
+	    padding: 7px 14px;
+	    line-height: 20px;
+	}
+	.b-popup tr{
+		border-bottom:1px solid black;
+	}
+	.b-popup td:nth-child(2n){
+		border-left:1px solid black;
+	}
+	.b-popup#requisites-popup .b-btn{
+		width: 240px;
+		color: #3b3636;
 	}
 
 	.b-popup form{
@@ -1818,7 +2004,6 @@ ul.b-breadcrumbs {
 
 	.b-popup .b-btn{
 		float: right;
-		width: calc(50% - 12px);
 		min-width: 180px;
 		padding: 16px 24px 14px;
 		margin-top: 32px;
@@ -1904,7 +2089,7 @@ ul.b-breadcrumbs {
 /*----------slider-styles-----------*/
 
 
-#slider-nav{
+div#slider-nav{
 	right: auto;
     left: calc(50% + 553px);
     position: fixed;
@@ -1913,12 +2098,12 @@ ul.b-breadcrumbs {
     top: 50%;
 }
 
-	#slider-nav ul{
+	div#slider-nav ul{
 		/*margin-right: -10px;*/
 		float: right;
 	}
 
-		#slider-nav ul li{
+		div#slider-nav ul li{
 			display: block;
 			position: relative;
 			width: 31px;
@@ -1927,11 +2112,11 @@ ul.b-breadcrumbs {
 			margin-bottom: 8px;
 		}
 
-		#slider-nav ul li:last-child{
+		div#slider-nav ul li:last-child{
 			margin-bottom: 0;
 		}
 
-		#slider-nav ul li a{
+		div#slider-nav ul li a{
 			display: block;
 		    position: relative;
 		    z-index: 1;
@@ -1941,7 +2126,7 @@ ul.b-breadcrumbs {
 		    text-decoration: none;
 		}
 
-			#slider-nav ul li a span{
+			div#slider-nav ul li a span{
 				vertical-align: middle;
 			    display: inline-block;
 				margin: 3px 0 0 8px;
@@ -1959,7 +2144,7 @@ ul.b-breadcrumbs {
 			    transition: all 0.15s ease-in-out;
 			}
 
-			#slider-nav ul li a.active span{
+			div#slider-nav ul li a.active span{
 				width: 15px;
 				height: 15px;
 				margin: 3px 0 0 8px;
