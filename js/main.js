@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
     var isDesktop = false,
     isTablet = false,
     isMobile = false,
@@ -181,7 +180,12 @@ $(document).ready(function(){
                 page.attachEvent("onmousewheel", onWheel);
             }
 
+            var timer;
+                // timerToggle = false;
             function onWheel(e) {
+                clearTimeout(timer);
+
+                // timerToggle = true;
 
                 if(!$(".fancybox-slide .b-popup").length){
                     e = e || window.event;
@@ -191,9 +195,9 @@ $(document).ready(function(){
                         console.log(Math.abs(delta)+" "+Math.abs(deltaPrev)+" "+tolerant);
                         if(!nowScroll && !$('.burger-menu').hasClass("open")
                             && Math.abs(delta) > Math.abs(deltaPrev) ){
-                            // console.log("--------------------scroll--------------------");
+                            console.log("--------------------scroll--------------------");
                             tolerant += delta;
-                            if(Math.abs(tolerant) > 20){
+                            if(Math.abs(tolerant) > 1){
                                 nowScroll = true;
 
                                 var currentID = parseInt($('.current-slide').attr("data-id"));
@@ -218,6 +222,10 @@ $(document).ready(function(){
                         e.preventDefault ? e.preventDefault() : (e.returnValue = false);
                     }
                 }
+                timer = setTimeout(function(){
+                    deltaPrev = 0;
+                    console.log("timeout");
+                },300);
             }
             $('.b-logo').on('click', function(){
                 if(!$('.burger-menu').hasClass("open")){
@@ -279,10 +287,10 @@ $(document).ready(function(){
     $('.b-screen').bind('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function(e){
         $(this).removeClass("move-up scale-up move-down scale-down");
         setTimeout(function() {
-            console.log("nowScroll-cancel");
+            // console.log("nowScroll-cancel");
             nowScroll = false;
             tolerant = 0;
-        }, 100);
+        }, 300);
         if(parseInt($('.current-slide').attr("data-id")) === 4){
             showDots();
         }else{
