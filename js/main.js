@@ -290,7 +290,7 @@ $(document).ready(function(){
             // console.log("nowScroll-cancel");
             nowScroll = false;
             tolerant = 0;
-        }, 300);
+        }, 500);
         if(parseInt($('.current-slide').attr("data-id")) === 4){
             showDots();
         }else{
